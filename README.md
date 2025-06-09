@@ -53,14 +53,13 @@ El desarrollo de DoneIt! está en proceso. Próximamente se incluirán instrucci
 ## 📄 Documentación y Uso.
 Este proyecto incluye documentación básica que describe el escenario elegido y cómo se cumplen los requisitos. Pronto se agregarán guías para facilitar la navegación y el uso.
 
-------
+---
 ## 👥 Autores
 
 - 👨‍💻[**Ayala, Ariel.**](https://github.com/Arhiell)
 - 👨‍💻[**Capovilla, Bautista.**](https://github.com/BautiC-9)
-- 👨‍💻 [**Herro, Andres.**](https://github.com/Arhiell)
-- 👨‍💻 [**Mill, Juan.**](https://github.com/Arhiell)
-
+- 👨‍💻 [**Herro, Andres.**](https://github.com/HerreroAndre)
+- 👨‍💻 [**Mill, Juan.**](https://github.com/r4ideny)
 
 ---
 ## 📝 Licencia
