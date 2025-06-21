@@ -4,10 +4,13 @@ namespace DoneIt.ViewModels
 {
     public class LoginViewModel
     {
-        [Required, EmailAddress]
-        public string Email { get; set; }
+        [Required(ErrorMessage = "Debe ingresar su correo o nombre de usuario")]
+        [Display(Name = "Correo o Nombre de Usuario")]
+        public string Identificador { get; set; }
 
-        [Required, DataType(DataType.Password)]
+        [Required(ErrorMessage = "El campo Contraseña es obligatorio")]
+        [DataType(DataType.Password)]
+        [Display(Name = "Contraseña")]
         public string Password { get; set; }
     }
 }

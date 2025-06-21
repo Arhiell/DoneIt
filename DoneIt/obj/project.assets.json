@@ -5363,11 +5363,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Estudiante\\OneDrive\\Desktop\\Practica BD\\DoneIt\\DoneIt\\DoneIt.csproj",
+      "projectUniqueName": "C:\\Users\\Estudiante\\OneDrive\\Desktop\\Proyecto TPI\\DoneIt\\DoneIt\\DoneIt.csproj",
       "projectName": "DoneIt",
-      "projectPath": "C:\\Users\\Estudiante\\OneDrive\\Desktop\\Practica BD\\DoneIt\\DoneIt\\DoneIt.csproj",
+      "projectPath": "C:\\Users\\Estudiante\\OneDrive\\Desktop\\Proyecto TPI\\DoneIt\\DoneIt\\DoneIt.csproj",
       "packagesPath": "C:\\Users\\Estudiante\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Estudiante\\OneDrive\\Desktop\\Practica BD\\DoneIt\\DoneIt\\obj\\",
+      "outputPath": "C:\\Users\\Estudiante\\OneDrive\\Desktop\\Proyecto TPI\\DoneIt\\DoneIt\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -1,34 +1,38 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Estudiante\\OneDrive\\Desktop\\Practica BD\\DoneIt\\",
+  "WorkspaceRootPath": "C:\\Users\\Estudiante\\OneDrive\\Desktop\\Proyecto TPI\\DoneIt\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{676B5C8F-DBC4-46FB-ABF4-38F15835E883}|DoneIt\\DoneIt.csproj|c:\\users\\estudiante\\onedrive\\desktop\\practica bd\\doneit\\doneit\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{676B5C8F-DBC4-46FB-ABF4-38F15835E883}|DoneIt\\DoneIt.csproj|solutionrelative:doneit\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{676B5C8F-DBC4-46FB-ABF4-38F15835E883}|DoneIt\\DoneIt.csproj|c:\\users\\estudiante\\onedrive\\desktop\\practica bd\\doneit\\doneit\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{676B5C8F-DBC4-46FB-ABF4-38F15835E883}|DoneIt\\DoneIt.csproj|solutionrelative:doneit\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{676B5C8F-DBC4-46FB-ABF4-38F15835E883}|DoneIt\\DoneIt.csproj|c:\\users\\estudiante\\onedrive\\desktop\\practica bd\\doneit\\doneit\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{676B5C8F-DBC4-46FB-ABF4-38F15835E883}|DoneIt\\DoneIt.csproj|solutionrelative:doneit\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{676B5C8F-DBC4-46FB-ABF4-38F15835E883}|DoneIt\\DoneIt.csproj|c:\\users\\estudiante\\onedrive\\desktop\\practica bd\\doneit\\doneit\\views\\cuenta\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{676B5C8F-DBC4-46FB-ABF4-38F15835E883}|DoneIt\\DoneIt.csproj|c:\\users\\estudiante\\onedrive\\desktop\\proyecto tpi\\doneit\\doneit\\views\\cuenta\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{676B5C8F-DBC4-46FB-ABF4-38F15835E883}|DoneIt\\DoneIt.csproj|solutionrelative:doneit\\views\\cuenta\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{676B5C8F-DBC4-46FB-ABF4-38F15835E883}|DoneIt\\DoneIt.csproj|c:\\users\\estudiante\\onedrive\\desktop\\practica bd\\doneit\\doneit\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{676B5C8F-DBC4-46FB-ABF4-38F15835E883}|DoneIt\\DoneIt.csproj|c:\\users\\estudiante\\onedrive\\desktop\\proyecto tpi\\doneit\\doneit\\controllers\\cuentacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{676B5C8F-DBC4-46FB-ABF4-38F15835E883}|DoneIt\\DoneIt.csproj|solutionrelative:doneit\\controllers\\cuentacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{676B5C8F-DBC4-46FB-ABF4-38F15835E883}|DoneIt\\DoneIt.csproj|c:\\users\\estudiante\\onedrive\\desktop\\proyecto tpi\\doneit\\doneit\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{676B5C8F-DBC4-46FB-ABF4-38F15835E883}|DoneIt\\DoneIt.csproj|solutionrelative:doneit\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{676B5C8F-DBC4-46FB-ABF4-38F15835E883}|DoneIt\\DoneIt.csproj|c:\\users\\estudiante\\onedrive\\desktop\\proyecto tpi\\doneit\\doneit\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{676B5C8F-DBC4-46FB-ABF4-38F15835E883}|DoneIt\\DoneIt.csproj|solutionrelative:doneit\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{676B5C8F-DBC4-46FB-ABF4-38F15835E883}|DoneIt\\DoneIt.csproj|c:\\users\\estudiante\\onedrive\\desktop\\proyecto tpi\\doneit\\doneit\\viewmodels\\registroviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{676B5C8F-DBC4-46FB-ABF4-38F15835E883}|DoneIt\\DoneIt.csproj|solutionrelative:doneit\\viewmodels\\registroviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{676B5C8F-DBC4-46FB-ABF4-38F15835E883}|DoneIt\\DoneIt.csproj|c:\\users\\estudiante\\onedrive\\desktop\\proyecto tpi\\doneit\\doneit\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{676B5C8F-DBC4-46FB-ABF4-38F15835E883}|DoneIt\\DoneIt.csproj|solutionrelative:doneit\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{676B5C8F-DBC4-46FB-ABF4-38F15835E883}|DoneIt\\DoneIt.csproj|c:\\users\\estudiante\\onedrive\\desktop\\practica bd\\doneit\\doneit\\views\\cuenta\\registro.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{676B5C8F-DBC4-46FB-ABF4-38F15835E883}|DoneIt\\DoneIt.csproj|solutionrelative:doneit\\views\\cuenta\\registro.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{676B5C8F-DBC4-46FB-ABF4-38F15835E883}|DoneIt\\DoneIt.csproj|c:\\users\\estudiante\\onedrive\\desktop\\proyecto tpi\\doneit\\doneit\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{676B5C8F-DBC4-46FB-ABF4-38F15835E883}|DoneIt\\DoneIt.csproj|solutionrelative:doneit\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{676B5C8F-DBC4-46FB-ABF4-38F15835E883}|DoneIt\\DoneIt.csproj|c:\\users\\estudiante\\onedrive\\desktop\\practica bd\\doneit\\doneit\\controllers\\cuentacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{676B5C8F-DBC4-46FB-ABF4-38F15835E883}|DoneIt\\DoneIt.csproj|solutionrelative:doneit\\controllers\\cuentacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{676B5C8F-DBC4-46FB-ABF4-38F15835E883}|DoneIt\\DoneIt.csproj|c:\\users\\estudiante\\onedrive\\desktop\\proyecto tpi\\doneit\\doneit\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{676B5C8F-DBC4-46FB-ABF4-38F15835E883}|DoneIt\\DoneIt.csproj|solutionrelative:doneit\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -43,40 +47,40 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\Estudiante\\OneDrive\\Desktop\\Practica BD\\DoneIt\\DoneIt\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "DoneIt\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\Estudiante\\OneDrive\\Desktop\\Practica BD\\DoneIt\\DoneIt\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "DoneIt\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAYwBMAAAAZAAAAAAAAAA==",
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\Estudiante\\OneDrive\\Desktop\\Proyecto TPI\\DoneIt\\DoneIt\\Views\\Cuenta\\Login.cshtml",
+              "RelativeDocumentMoniker": "DoneIt\\Views\\Cuenta\\Login.cshtml",
+              "ToolTip": "C:\\Users\\Estudiante\\OneDrive\\Desktop\\Proyecto TPI\\DoneIt\\DoneIt\\Views\\Cuenta\\Login.cshtml",
+              "RelativeToolTip": "DoneIt\\Views\\Cuenta\\Login.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA0AAABMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-19T06:50:03.28Z",
+              "WhenOpened": "2025-06-21T05:10:30.915Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Usuario.cs",
+              "DocumentMoniker": "C:\\Users\\Estudiante\\OneDrive\\Desktop\\Proyecto TPI\\DoneIt\\DoneIt\\Models\\Usuario.cs",
+              "RelativeDocumentMoniker": "DoneIt\\Models\\Usuario.cs",
+              "ToolTip": "C:\\Users\\Estudiante\\OneDrive\\Desktop\\Proyecto TPI\\DoneIt\\DoneIt\\Models\\Usuario.cs",
+              "RelativeToolTip": "DoneIt\\Models\\Usuario.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-21T05:07:27.031Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\Estudiante\\OneDrive\\Desktop\\Practica BD\\DoneIt\\DoneIt\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "DoneIt\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\Estudiante\\OneDrive\\Desktop\\Practica BD\\DoneIt\\DoneIt\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "DoneIt\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Title": "LoginViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Estudiante\\OneDrive\\Desktop\\Proyecto TPI\\DoneIt\\DoneIt\\ViewModels\\LoginViewModel.cs",
+              "RelativeDocumentMoniker": "DoneIt\\ViewModels\\LoginViewModel.cs",
+              "ToolTip": "C:\\Users\\Estudiante\\OneDrive\\Desktop\\Proyecto TPI\\DoneIt\\DoneIt\\ViewModels\\LoginViewModel.cs",
+              "RelativeToolTip": "DoneIt\\ViewModels\\LoginViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T06:46:59.356Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Estudiante\\OneDrive\\Desktop\\Practica BD\\DoneIt\\DoneIt\\Program.cs",
-              "RelativeDocumentMoniker": "DoneIt\\Program.cs",
-              "ToolTip": "C:\\Users\\Estudiante\\OneDrive\\Desktop\\Practica BD\\DoneIt\\DoneIt\\Program.cs",
-              "RelativeToolTip": "DoneIt\\Program.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAYAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T05:33:47.397Z",
+              "WhenOpened": "2025-06-21T04:56:20Z",
               "EditorCaption": ""
             },
             {
@@ -89,54 +93,66 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Login.cshtml",
-              "DocumentMoniker": "C:\\Users\\Estudiante\\OneDrive\\Desktop\\Practica BD\\DoneIt\\DoneIt\\Views\\Cuenta\\Login.cshtml",
-              "RelativeDocumentMoniker": "DoneIt\\Views\\Cuenta\\Login.cshtml",
-              "ToolTip": "C:\\Users\\Estudiante\\OneDrive\\Desktop\\Practica BD\\DoneIt\\DoneIt\\Views\\Cuenta\\Login.cshtml",
-              "RelativeToolTip": "DoneIt\\Views\\Cuenta\\Login.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-19T06:21:53.019Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "LoginViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\Estudiante\\OneDrive\\Desktop\\Practica BD\\DoneIt\\DoneIt\\ViewModels\\LoginViewModel.cs",
-              "RelativeDocumentMoniker": "DoneIt\\ViewModels\\LoginViewModel.cs",
-              "ToolTip": "C:\\Users\\Estudiante\\OneDrive\\Desktop\\Practica BD\\DoneIt\\DoneIt\\ViewModels\\LoginViewModel.cs",
-              "RelativeToolTip": "DoneIt\\ViewModels\\LoginViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "RegistroViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Estudiante\\OneDrive\\Desktop\\Proyecto TPI\\DoneIt\\DoneIt\\ViewModels\\RegistroViewModel.cs",
+              "RelativeDocumentMoniker": "DoneIt\\ViewModels\\RegistroViewModel.cs",
+              "ToolTip": "C:\\Users\\Estudiante\\OneDrive\\Desktop\\Proyecto TPI\\DoneIt\\DoneIt\\ViewModels\\RegistroViewModel.cs",
+              "RelativeToolTip": "DoneIt\\ViewModels\\RegistroViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T06:09:28.695Z",
+              "WhenOpened": "2025-06-21T04:48:06.499Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "Registro.cshtml",
-              "DocumentMoniker": "C:\\Users\\Estudiante\\OneDrive\\Desktop\\Practica BD\\DoneIt\\DoneIt\\Views\\Cuenta\\Registro.cshtml",
-              "RelativeDocumentMoniker": "DoneIt\\Views\\Cuenta\\Registro.cshtml",
-              "ToolTip": "C:\\Users\\Estudiante\\OneDrive\\Desktop\\Practica BD\\DoneIt\\DoneIt\\Views\\Cuenta\\Registro.cshtml",
-              "RelativeToolTip": "DoneIt\\Views\\Cuenta\\Registro.cshtml",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAADoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-19T05:22:37.137Z",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Estudiante\\OneDrive\\Desktop\\Proyecto TPI\\DoneIt\\DoneIt\\Program.cs",
+              "RelativeDocumentMoniker": "DoneIt\\Program.cs",
+              "ToolTip": "C:\\Users\\Estudiante\\OneDrive\\Desktop\\Proyecto TPI\\DoneIt\\DoneIt\\Program.cs",
+              "RelativeToolTip": "DoneIt\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-21T04:23:36.043Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "CuentaController.cs",
-              "DocumentMoniker": "C:\\Users\\Estudiante\\OneDrive\\Desktop\\Practica BD\\DoneIt\\DoneIt\\Controllers\\CuentaController.cs",
-              "RelativeDocumentMoniker": "DoneIt\\Controllers\\CuentaController.cs",
-              "ToolTip": "C:\\Users\\Estudiante\\OneDrive\\Desktop\\Practica BD\\DoneIt\\DoneIt\\Controllers\\CuentaController.cs",
-              "RelativeToolTip": "DoneIt\\Controllers\\CuentaController.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAAAEgAAAAAAAAAAAAAAA==",
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Estudiante\\OneDrive\\Desktop\\Proyecto TPI\\DoneIt\\DoneIt\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "DoneIt\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Estudiante\\OneDrive\\Desktop\\Proyecto TPI\\DoneIt\\DoneIt\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "DoneIt\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAABcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-21T02:56:05.24Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\Estudiante\\OneDrive\\Desktop\\Proyecto TPI\\DoneIt\\DoneIt\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "DoneIt\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\Estudiante\\OneDrive\\Desktop\\Proyecto TPI\\DoneIt\\DoneIt\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "DoneIt\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T04:51:42.244Z",
+              "WhenOpened": "2025-06-21T02:55:26.315Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CuentaController.cs",
+              "DocumentMoniker": "C:\\Users\\Estudiante\\OneDrive\\Desktop\\Proyecto TPI\\DoneIt\\DoneIt\\Controllers\\CuentaController.cs",
+              "RelativeDocumentMoniker": "DoneIt\\Controllers\\CuentaController.cs",
+              "ToolTip": "C:\\Users\\Estudiante\\OneDrive\\Desktop\\Proyecto TPI\\DoneIt\\DoneIt\\Controllers\\CuentaController.cs",
+              "RelativeToolTip": "DoneIt\\Controllers\\CuentaController.cs",
+              "ViewState": "AgIAADsAAAAAAAAAAAAwwEsAAABeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-21T02:52:51.611Z",
               "EditorCaption": ""
             }
           ]

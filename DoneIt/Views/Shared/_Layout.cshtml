@@ -21,7 +21,7 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
 
                     @{
-                        var logueado = TempData["UsuarioLogueado"] != null;
+                        var logueado = Context.Session.GetString("UsuarioLogueado") != null;
                     }
 
                     <ul class="navbar-nav flex-grow-1">

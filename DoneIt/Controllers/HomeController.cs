@@ -15,7 +15,7 @@ namespace DoneIt.Controllers
 
         public IActionResult Index()
         {
-            if (TempData["UsuarioLogueado"] == null)
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("UsuarioLogueado")))
             {
                 return RedirectToAction("Login", "Cuenta");
             }

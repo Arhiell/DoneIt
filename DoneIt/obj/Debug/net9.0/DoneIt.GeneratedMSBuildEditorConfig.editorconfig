@@ -17,49 +17,49 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = DoneIt
 build_property.RootNamespace = DoneIt
-build_property.ProjectDir = C:\Users\Estudiante\OneDrive\Desktop\Practica BD\DoneIt\DoneIt\
+build_property.ProjectDir = C:\Users\Estudiante\OneDrive\Desktop\Proyecto TPI\DoneIt\DoneIt\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 9.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Estudiante\OneDrive\Desktop\Practica BD\DoneIt\DoneIt
+build_property.MSBuildProjectDirectory = C:\Users\Estudiante\OneDrive\Desktop\Proyecto TPI\DoneIt\DoneIt
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/Estudiante/OneDrive/Desktop/Practica BD/DoneIt/DoneIt/Views/Cuenta/Login.cshtml]
+[C:/Users/Estudiante/OneDrive/Desktop/Proyecto TPI/DoneIt/DoneIt/Views/Cuenta/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VlbnRhXExvZ2luLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Estudiante/OneDrive/Desktop/Practica BD/DoneIt/DoneIt/Views/Cuenta/Registro.cshtml]
+[C:/Users/Estudiante/OneDrive/Desktop/Proyecto TPI/DoneIt/DoneIt/Views/Cuenta/Registro.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VlbnRhXFJlZ2lzdHJvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Estudiante/OneDrive/Desktop/Practica BD/DoneIt/DoneIt/Views/Home/Index.cshtml]
+[C:/Users/Estudiante/OneDrive/Desktop/Proyecto TPI/DoneIt/DoneIt/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Estudiante/OneDrive/Desktop/Practica BD/DoneIt/DoneIt/Views/Home/Privacy.cshtml]
+[C:/Users/Estudiante/OneDrive/Desktop/Proyecto TPI/DoneIt/DoneIt/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Estudiante/OneDrive/Desktop/Practica BD/DoneIt/DoneIt/Views/Shared/Error.cshtml]
+[C:/Users/Estudiante/OneDrive/Desktop/Proyecto TPI/DoneIt/DoneIt/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Estudiante/OneDrive/Desktop/Practica BD/DoneIt/DoneIt/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Estudiante/OneDrive/Desktop/Proyecto TPI/DoneIt/DoneIt/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Estudiante/OneDrive/Desktop/Practica BD/DoneIt/DoneIt/Views/_ViewImports.cshtml]
+[C:/Users/Estudiante/OneDrive/Desktop/Proyecto TPI/DoneIt/DoneIt/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Estudiante/OneDrive/Desktop/Practica BD/DoneIt/DoneIt/Views/_ViewStart.cshtml]
+[C:/Users/Estudiante/OneDrive/Desktop/Proyecto TPI/DoneIt/DoneIt/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Estudiante/OneDrive/Desktop/Practica BD/DoneIt/DoneIt/Views/Shared/_Layout.cshtml]
+[C:/Users/Estudiante/OneDrive/Desktop/Proyecto TPI/DoneIt/DoneIt/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-xgkn026p70

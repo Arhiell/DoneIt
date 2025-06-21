@@ -7,6 +7,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddSession();
+
 //Conexión a la base de datos
 builder.Services.AddDbContext<DoneItContext>(options =>
     options.UseMySQL(builder.Configuration.GetConnectionString("DefaultConnection")));
@@ -23,7 +25,12 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseStaticFiles();
+
 app.UseRouting();
+
+app.UseSession();
 
 app.UseAuthorization();
 

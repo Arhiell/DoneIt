@@ -72,7 +72,8 @@ namespace DoneIt.Controllers
                 return View(model);
 
             var usuario = await _context.Usuarios
-                .FirstOrDefaultAsync(u => u.Email == model.Email);
+                .FirstOrDefaultAsync(u =>
+                    u.Email == model.Identificador || u.NombreUsuario == model.Identificador);
 
             if (usuario == null || !PasswordHelper.VerifyPassword(model.Password, usuario.PasswordHash))
             {
@@ -80,8 +81,8 @@ namespace DoneIt.Controllers
                 return View(model);
             }
 
-            // Guardamos nombre de usuario en TempData (puede usarse para bienvenida o control)
-            TempData["UsuarioLogueado"] = usuario.NombreUsuario;
+            // Se guarda el nombre de usuario para controlar el mambo de sesión
+            HttpContext.Session.SetString("UsuarioLogueado", usuario.NombreUsuario);
 
             // Redirigimos a la página principal o menú (por ahora Home/Index)
             return RedirectToAction("Index", "Home");
