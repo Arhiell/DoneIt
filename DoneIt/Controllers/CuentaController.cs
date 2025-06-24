@@ -1,8 +1,10 @@
-﻿using DoneIt.Helpers;
+﻿using System.Net.NetworkInformation;
+using DoneIt.Helpers;
 using DoneIt.Models;
 using DoneIt.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+
 
 namespace DoneIt.Controllers
 {
@@ -83,6 +85,7 @@ namespace DoneIt.Controllers
 
             // Se guarda el nombre de usuario para controlar el mambo de sesión
             HttpContext.Session.SetString("UsuarioLogueado", usuario.NombreUsuario);
+            HttpContext.Session.SetString("NombreCompleto", $"{usuario.Nombre} {usuario.Apellido}");
 
             // Redirigimos a la página principal o menú (por ahora Home/Index)
             return RedirectToAction("Index", "Home");

@@ -23,10 +23,24 @@ namespace DoneIt.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Proyecto()
         {
             return View();
         }
+
+
+        public IActionResult Perfil()
+        {
+            return View();
+        }
+
+
+        public IActionResult Cerrar()
+        {
+            return View();
+        }
+
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

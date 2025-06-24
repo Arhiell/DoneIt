@@ -8,14 +8,17 @@
     ".NETCoreApp,Version=v9.0": {
       "DoneIt/1.0.0": {
         "dependencies": {
+          "Font.Awesome": "5.15.4",
           "Microsoft.AspNetCore.Identity": "2.3.1",
           "Microsoft.EntityFrameworkCore.Design": "9.0.6",
-          "MySql.EntityFrameworkCore": "9.0.3"
+          "MySql.EntityFrameworkCore": "9.0.3",
+          "bootstrap": "5.3.6"
         },
         "runtime": {
           "DoneIt.dll": {}
         }
       },
+      "bootstrap/5.3.6": {},
       "BouncyCastle.Cryptography/2.5.1": {
         "runtime": {
           "lib/net6.0/BouncyCastle.Cryptography.dll": {
@@ -24,6 +27,7 @@
           }
         }
       },
+      "Font.Awesome/5.15.4": {},
       "Google.Protobuf/3.30.0": {
         "runtime": {
           "lib/net5.0/Google.Protobuf.dll": {
@@ -932,7 +936,14 @@
       },
       "System.Text.Encoding.CodePages/8.0.0": {},
       "System.Text.Encodings.Web/8.0.0": {},
-      "System.Text.Json/9.0.6": {},
+      "System.Text.Json/9.0.6": {
+        "runtime": {
+          "lib/net9.0/System.Text.Json.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.625.26613"
+          }
+        }
+      },
       "System.Threading.Channels/7.0.0": {},
       "System.Threading.Tasks/4.3.0": {
         "dependencies": {
@@ -974,12 +985,26 @@
       "serviceable": false,
       "sha512": ""
     },
+    "bootstrap/5.3.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-EIn/yfZDXTX8TFJSG6fkFQw7cXpXv2kFDrIBiKWR9Xi2NOCXNs3f7XcNd52X68ylFKI0TyEHjxBjdMz4x9GT4Q==",
+      "path": "bootstrap/5.3.6",
+      "hashPath": "bootstrap.5.3.6.nupkg.sha512"
+    },
     "BouncyCastle.Cryptography/2.5.1": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-zy8TMeTP+1FH2NrLaNZtdRbBdq7u5MI+NFZQOBSM69u5RFkciinwzV2eveY6Kjf5MzgsYvvl6kTStsj3JrXqkg==",
       "path": "bouncycastle.cryptography/2.5.1",
       "hashPath": "bouncycastle.cryptography.2.5.1.nupkg.sha512"
+    },
+    "Font.Awesome/5.15.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Okg91rA7RWbd+eKyBNNnvlvzFee7A4yIi0WdTrJMVPos1ntONAVn/m96Ex9qvVXKKiroBZ1vtCXtpFMnHNof1g==",
+      "path": "font.awesome/5.15.4",
+      "hashPath": "font.awesome.5.15.4.nupkg.sha512"
     },
     "Google.Protobuf/3.30.0": {
       "type": "package",

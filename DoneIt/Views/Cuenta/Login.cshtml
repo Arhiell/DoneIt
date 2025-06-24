@@ -1,33 +1,74 @@
 ﻿@model DoneIt.ViewModels.LoginViewModel
+
 @{
+    Layout = null;
     ViewData["Title"] = "Iniciar Sesión";
 }
 
-<h2>Iniciar Sesión</h2>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"] - DoneIt</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<form asp-action="Login" method="post">
-    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-    <div class="form-group">
-        <label asp-for="Identificador"></label>
-        <input asp-for="Identificador" class="form-control" />
-        <span asp-validation-for="Identificador" class="text-danger"></span>
+    <!-- FontAwesome CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" rel="stylesheet" />
+
+    <!-- CSS personalizado para Login -->
+    <link href="~/css/Login.css" rel="stylesheet" />
+
+</head>
+<body>
+
+    <div class="card-container">
+
+    <h1 class="doneit-title">
+        <i class="fas fa-clock fa-spin"></i> DoneIt!
+    </h1>
+
+    <h2 class="mt-4 mb-4 text-info">
+        <i class="fas fa-sign-in-alt me-2"></i> Iniciar Sesión
+    </h2>
+
+    <form asp-action="Login" method="post" novalidate>
+        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+        <div class="form-group mb-3">
+            <label asp-for="Identificador">
+                <i class="fas fa-user me-2 text-info"></i> Usuario o Email
+            </label>
+            <input asp-for="Identificador" class="form-control" />
+            <span asp-validation-for="Identificador" class="text-danger"></span>
+        </div>
+
+        <div class="form-group mb-4">
+            <label asp-for="Password">
+                <i class="fas fa-lock me-2 text-info"></i> Contraseña
+            </label>
+            <input asp-for="Password" type="password" class="form-control" />
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100">
+            <i class="fas fa-arrow-right me-2"></i> Iniciar Sesión
+        </button>
+    </form>
+
+    <div class="mt-3 register-link">
+        ¿No tenés cuenta?
+        <a asp-controller="Cuenta" asp-action="Registro" class="register-link">Registrate</a>
     </div>
 
-    <div class="form-group">
-        <label asp-for="Password"></label>
-        <input asp-for="Password" type="password" class="form-control" />
-        <span asp-validation-for="Password" class="text-danger"></span>
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    @section Scripts {
+        <partial name="_ValidationScriptsPartial" />
+    }
     </div>
-
-    <button type="submit" class="btn btn-primary mt-3">Iniciar Sesión</button>
-</form>
-
-<div class="mt-3">
-    ¿No tenés cuenta?
-    <a asp-controller="Cuenta" asp-action="Registro">Registrate</a>
-</div>
-
-@section Scripts {
-    <partial name="_ValidationScriptsPartial" />
-}
+</body>
+</html>
