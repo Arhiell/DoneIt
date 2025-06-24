@@ -23,7 +23,7 @@ public partial class DoneItContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseMySQL("server=localhost;port=3306;database=DoneIt;user=root;password=2023;");
+        => optionsBuilder.UseMySQL("server=localhost;port=3306;database=DoneIt;user=doneit_user;password=doneit123;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -120,9 +120,6 @@ public partial class DoneItContext : DbContext
             entity.Property(e => e.PasswordHash)
                 .HasMaxLength(255)
                 .HasColumnName("password_hash");
-            entity.Property(e => e.Salt)
-                .HasMaxLength(255)
-                .HasColumnName("salt");
             entity.Property(e => e.TokenRecuperacion)
                 .HasMaxLength(255)
                 .HasColumnName("token_recuperacion");

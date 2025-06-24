@@ -1,3 +1,10 @@
+-- Crear usuario
+CREATE USER IF NOT EXISTS 'doneit_user'@'localhost' IDENTIFIED BY 'doneit123';
+
+-- Otorga permisos sobre la BD
+GRANT ALL PRIVILEGES ON DoneIt.* TO 'doneit_user'@'localhost';
+FLUSH PRIVILEGES;
+
 CREATE DATABASE DoneIt;
 USE DoneIt;
 
@@ -10,7 +17,6 @@ CREATE TABLE Usuario (
     fecha_nacimiento DATE,
     nombre_usuario VARCHAR(50) NOT NULL UNIQUE,
     password_hash VARCHAR(255) NOT NULL,
-    salt VARCHAR(255) NOT NULL,
     fecha_registro DATE,
     token_recuperacion VARCHAR(255),
     vencimiento_token DATETIME
@@ -66,3 +72,4 @@ INSERT INTO Tareas (titulo, descripcion, fecha_inicio, fecha_fin, estado, priori
 -- De Tarea para Proyecto 3 (1 tarea)
 INSERT INTO Tareas (titulo, descripcion, fecha_inicio, fecha_fin, estado, prioridad, id_proyecto) VALUES 
 ('Diseñar landing page', 'Hacer mockup y diseño en Figma.', NOW(), NOW() + INTERVAL 4 DAY, 'Pendiente', 'Alto', 3);
+
