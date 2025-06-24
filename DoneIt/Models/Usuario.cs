@@ -19,8 +19,6 @@ public partial class Usuario
 
     public string PasswordHash { get; set; } = null!;
 
-    public string Salt { get; set; } = null!;
-
     public DateTime? FechaRegistro { get; set; }
 
     public string? TokenRecuperacion { get; set; }

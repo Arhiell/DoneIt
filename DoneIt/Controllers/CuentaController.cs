@@ -50,8 +50,7 @@ namespace DoneIt.Controllers
                 Email = model.Email,
                 NombreUsuario = model.NombreUsuario,
                 FechaNacimiento = model.FechaNacimiento,
-                PasswordHash = hash,
-                Salt = "", //No se usa porque el salt está dentro del hash [cambiar en la bd (borrar a la mierda el campo salt)] 
+                PasswordHash = hash, 
                 FechaRegistro = DateTime.Now
             };
 

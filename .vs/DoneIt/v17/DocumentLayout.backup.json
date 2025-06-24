@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Estudiante\\OneDrive\\Desktop\\Proyecto TPI\\DoneIt\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{676B5C8F-DBC4-46FB-ABF4-38F15835E883}|DoneIt\\DoneIt.csproj|c:\\users\\estudiante\\onedrive\\desktop\\proyecto tpi\\doneit\\doneit\\controllers\\cuentacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{676B5C8F-DBC4-46FB-ABF4-38F15835E883}|DoneIt\\DoneIt.csproj|solutionrelative:doneit\\controllers\\cuentacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{676B5C8F-DBC4-46FB-ABF4-38F15835E883}|DoneIt\\DoneIt.csproj|c:\\users\\estudiante\\onedrive\\desktop\\proyecto tpi\\doneit\\doneit\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{676B5C8F-DBC4-46FB-ABF4-38F15835E883}|DoneIt\\DoneIt.csproj|solutionrelative:doneit\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{676B5C8F-DBC4-46FB-ABF4-38F15835E883}|DoneIt\\DoneIt.csproj|c:\\users\\estudiante\\onedrive\\desktop\\proyecto tpi\\doneit\\doneit\\models\\doneitcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{676B5C8F-DBC4-46FB-ABF4-38F15835E883}|DoneIt\\DoneIt.csproj|solutionrelative:doneit\\models\\doneitcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{676B5C8F-DBC4-46FB-ABF4-38F15835E883}|DoneIt\\DoneIt.csproj|c:\\users\\estudiante\\onedrive\\desktop\\proyecto tpi\\doneit\\doneit\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{676B5C8F-DBC4-46FB-ABF4-38F15835E883}|DoneIt\\DoneIt.csproj|solutionrelative:doneit\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{676B5C8F-DBC4-46FB-ABF4-38F15835E883}|DoneIt\\DoneIt.csproj|c:\\users\\estudiante\\onedrive\\desktop\\proyecto tpi\\doneit\\doneit\\controllers\\cuentacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{676B5C8F-DBC4-46FB-ABF4-38F15835E883}|DoneIt\\DoneIt.csproj|solutionrelative:doneit\\controllers\\cuentacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,7 +46,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
+              "Title": "Usuario.cs",
+              "DocumentMoniker": "C:\\Users\\Estudiante\\OneDrive\\Desktop\\Proyecto TPI\\DoneIt\\DoneIt\\Models\\Usuario.cs",
+              "RelativeDocumentMoniker": "DoneIt\\Models\\Usuario.cs",
+              "ToolTip": "C:\\Users\\Estudiante\\OneDrive\\Desktop\\Proyecto TPI\\DoneIt\\DoneIt\\Models\\Usuario.cs",
+              "RelativeToolTip": "DoneIt\\Models\\Usuario.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAywBMAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-24T15:42:28.949Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "DoneItContext.cs",
               "DocumentMoniker": "C:\\Users\\Estudiante\\OneDrive\\Desktop\\Proyecto TPI\\DoneIt\\DoneIt\\Models\\DoneItContext.cs",
               "RelativeDocumentMoniker": "DoneIt\\Models\\DoneItContext.cs",
@@ -55,7 +72,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\Estudiante\\OneDrive\\Desktop\\Proyecto TPI\\DoneIt\\DoneIt\\appsettings.json",
               "RelativeDocumentMoniker": "DoneIt\\appsettings.json",
@@ -63,18 +80,17 @@
               "RelativeToolTip": "DoneIt\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-06-24T13:56:23.829Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-24T13:56:23.829Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "CuentaController.cs",
               "DocumentMoniker": "C:\\Users\\Estudiante\\OneDrive\\Desktop\\Proyecto TPI\\DoneIt\\DoneIt\\Controllers\\CuentaController.cs",
               "RelativeDocumentMoniker": "DoneIt\\Controllers\\CuentaController.cs",
               "ToolTip": "C:\\Users\\Estudiante\\OneDrive\\Desktop\\Proyecto TPI\\DoneIt\\DoneIt\\Controllers\\CuentaController.cs",
               "RelativeToolTip": "DoneIt\\Controllers\\CuentaController.cs",
-              "ViewState": "AgIAAD0AAAAAAAAAAAApwE0AAABeAAAAAAAAAA==",
+              "ViewState": "AgIAACkAAAAAAAAAAAAwwDQAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-24T13:23:29.539Z",
               "EditorCaption": ""
