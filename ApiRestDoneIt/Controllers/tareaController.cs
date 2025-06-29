@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using ApiRestDoneIt.Models;
+using ApiRestDoneIt.Data;
 
 [Route("api/[controller]")]
 [ApiController]
@@ -11,27 +13,32 @@ public class TareasController : ControllerBase
 
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Tarea>>> GetTareas()
-        => await _context.Tareas.Include(t => t.Proyecto).ToListAsync();
+        => await _context.Tareas.Include(t => t.id_proyectoNavigation).ToListAsync();
 
     [HttpGet("{id}")]
     public async Task<ActionResult<Tarea>> GetTarea(int id)
     {
-        var tarea = await _context.Tareas.Include(t => t.Proyecto).FirstOrDefaultAsync(t => t.IdTarea == id);
+        var tarea = await _context.Tareas.Include(t => t.id_proyectoNavigation).FirstOrDefaultAsync(t => t.id_tarea == id);
         return tarea == null ? NotFound() : tarea;
     }
 
     [HttpPost]
     public async Task<ActionResult<Tarea>> PostTarea(Tarea tarea)
     {
+        if (tarea is null)
+        {
+            throw new ArgumentNullException(nameof(tarea));
+        }
+
         _context.Tareas.Add(tarea);
         await _context.SaveChangesAsync();
-        return CreatedAtAction(nameof(GetTarea), new { id = tarea.IdTarea }, tarea);
+        return CreatedAtAction(nameof(GetTarea), new { id = tarea.id_tarea }, tarea);
     }
 
     [HttpPut("{id}")]
     public async Task<IActionResult> PutTarea(int id, Tarea tarea)
     {
-        if (id != tarea.IdTarea) return BadRequest();
+        if (id != tarea.id_tarea) return BadRequest();
         _context.Entry(tarea).State = EntityState.Modified;
         await _context.SaveChangesAsync();
         return NoContent();

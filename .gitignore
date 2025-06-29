@@ -1,0 +1,48 @@
+## Archivos de Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## Archivos de build
+bin/
+obj/
+[Bb]uild/
+[Ll]og/
+*.log
+
+## Archivos de publicación
+publish/
+*.dbmdl
+*.bak
+*.sql
+*.pdb
+
+## Archivos de configuración locales
+appsettings.Development.json
+appsettings.Local.json
+secrets.json
+
+## Archivos temporales
+*.tmp
+*.temp
+*.swp
+*.DS_Store
+*.vscode/
+
+## Paquetes NuGet
+*.nupkg
+packages/
+*.snupkg
+
+## Configuración de Rider / JetBrains
+.idea/
+
+## Archivos generados por VS Code
+.vscode/
+
+## Archivos de SQLite temporales
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal

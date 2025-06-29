@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using ApiRestDoneIt.Models;
+using ApiRestDoneIt.Data;
 
 [Route("api/[controller]")]
 [ApiController]
@@ -21,17 +23,17 @@ public class UsuariosController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<ActionResult<Usuario>> PostUsuario(Usuario usuario)
+    public async Task<ActionResult<Usuario>> PostUsuario(Usuario usuario) // Fix: Use the correct type 'Usuario'  
     {
         _context.Usuarios.Add(usuario);
         await _context.SaveChangesAsync();
-        return CreatedAtAction(nameof(GetUsuario), new { id = usuario.IdUsuario }, usuario);
+        return CreatedAtAction(nameof(GetUsuario), new { id = usuario.id_usuario }, usuario);
     }
 
     [HttpPut("{id}")]
-    public async Task<IActionResult> PutUsuario(int id, Usuario usuario)
+    public async Task<IActionResult> PutUsuario(int id, Usuario usuario) // Fix: Use the correct type 'Usuario'  
     {
-        if (id != usuario.IdUsuario) return BadRequest();
+        if (id != usuario.id_usuario) return BadRequest();
 
         _context.Entry(usuario).State = EntityState.Modified;
         await _context.SaveChangesAsync();

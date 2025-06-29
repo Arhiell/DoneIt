@@ -1,14 +1,27 @@
-public class Tarea
+﻿
+#nullable disable
+using System;
+using System.Collections.Generic;
+
+namespace ApiRestDoneIt.Models;
+
+public partial class Tarea
 {
-    public int IdTarea { get; set; }
-    public string Titulo { get; set; }
-    public string? Descripcion { get; set; }
-    public DateTime? FechaInicio { get; set; }
-    public DateTime? FechaFin { get; set; }
+    public int id_tarea { get; set; }
 
-    public string Estado { get; set; }     // 'Pendiente', 'En Proceso', 'Finalizado'
-    public string Prioridad { get; set; }  // 'Bajo', 'Medio', 'Alto'
+    public string titulo { get; set; }
 
-    public int IdProyecto { get; set; }
-    public Proyecto Proyecto { get; set; }
+    public string descripcion { get; set; }
+
+    public DateTime? fecha_inicio { get; set; }
+
+    public DateTime? fecha_fin { get; set; }
+
+    public string estado { get; set; }
+
+    public string prioridad { get; set; }
+
+    public int id_proyecto { get; set; }
+
+    public virtual Proyecto id_proyectoNavigation { get; set; }
 }
