@@ -1,10 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\ApiRestDoneIt",
-    "\\ApiRestDoneIt\\Data",
-    "\\ApiRestDoneIt\\Models"
+    "\\ApiRestDoneIt"
   ],
-  "SelectedNode": "\\ApiRestDoneIt",
+  "SelectedNode": "\\ApiRestDoneIt\\ApiRestDoneIt.sln",
   "PreviewInSolutionExplorer": false
 }
