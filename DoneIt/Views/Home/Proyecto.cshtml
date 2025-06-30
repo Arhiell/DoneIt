@@ -1,0 +1,264 @@
+﻿@model DoneIt.ViewModels.ProyectosEditorViewModel
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/Proyecto.css" />
+}
+
+<div class="container mt-4">
+    <div class="gestion-proyectos-header text-center">
+        <h1 class="gestion-title">
+            <span class="icon-box">
+                <i class="fas fa-project-diagram"></i>
+            </span>
+            Gestión de Proyectos
+        </h1>
+        <h2 class="gestion-subtitle">
+            Administración completa y eficiente de tus proyectos con seguimiento y control.
+        </h2>
+    </div>
+
+
+    @if (TempData["Mensaje"] != null)
+    {
+        <div class="alert alert-success">@TempData["Mensaje"]</div>
+    }
+
+    <button class="btn btn-outline-secondary mb-3" type="button" onclick="toggleAll()">
+        🔄 Colapsar / Expandir Todos
+    </button>
+
+    @if (Model == null || (!Model.ProyectosRecientes.Any() && !Model.ProyectosRestantes.Any()))
+    {
+        <div class="alert alert-warning">No tenés proyectos registrados.</div>
+    }
+    else
+    {
+        <div class="accordion" id="accordionProyectos">
+            @foreach (var proyecto in Model.ProyectosRecientes.Concat(Model.ProyectosRestantes))
+            {
+                <div class="accordion-item mb-3 shadow-sm">
+                    <!-- BOTÓN QUE DESPLIEGA LAS TAREAS -->
+                    <div class="accordion-header d-flex justify-content-between align-items-center" id="heading@proyecto.IdProyecto">
+                        <button class="accordion-button collapsed flex-grow-1" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapse@proyecto.IdProyecto"
+                                aria-expanded="false" aria-controls="collapse@proyecto.IdProyecto">
+                        </button>
+                    </div>
+
+                    <!-- FORMULARIO DE EDICIÓN DEL PROYECTO -->
+                    <form asp-controller="ProyectoEditor" asp-action="EditarProyecto" method="post" onsubmit="return confirmarGuardarProyecto(@proyecto.IdProyecto);" id="formProyecto@proyecto.IdProyecto">
+                        <input type="hidden" name="IdProyecto" value="@proyecto.IdProyecto" />
+
+                        <div class="row g-2 align-items-end">
+                            <div class="col-md-4">
+                                <label>Nombre del proyecto</label>
+                                <input type="text" class="form-control" id="inputNombre@proyecto.IdProyecto" name="Nombre" value="@proyecto.Nombre" />
+                            </div>
+                            <div class="col-md-4">
+                                <label>Descripción</label>
+                                <input type="text" class="form-control" id="inputDescripcion@proyecto.IdProyecto" name="Descripcion" value="@proyecto.Descripcion" />
+                            </div>
+                            <div class="col-md-4 text-end">
+                                <!-- Botones similares a los de tarea -->
+                                <button type="submit" class="btn btn-success btn-sm me-1">💾</button>
+                                <button type="button" class="btn btn-danger btn-sm" onclick="confirmarEliminarProyecto(this, '@proyecto.Nombre', @proyecto.IdProyecto)">🗑️</button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- CUERPO DE TAREAS (accordion-body) -->
+                    <div id="collapse@proyecto.IdProyecto" class="accordion-collapse collapse">
+                        <div class="accordion-body">
+
+                            <hr />
+                            <h5 class="mt-4">Tareas</h5>
+
+                            @foreach (var tarea in proyecto.Tareas)
+                            {
+                                <div class="mb-3 border rounded p-2">
+                                    <form asp-controller="ProyectoEditor" asp-action="EditarTarea" method="post" onsubmit="return confirmarGuardarTarea(this, '@tarea.Titulo');">
+                                        <input type="hidden" name="IdTarea" value="@tarea.IdTarea" />
+                                        <div class="row g-2 align-items-end">
+                                            <div class="col-md-3">
+                                                <label>Título</label>
+                                                <input name="Titulo" class="form-control" value="@tarea.Titulo" />
+                                            </div>
+                                            <div class="col-md-3">
+                                                <label>Descripción</label>
+                                                <input name="Descripcion" class="form-control" value="@tarea.Descripcion" />
+                                            </div>
+                                            <div class="col-md-2">
+                                                <label>Inicio</label>
+                                                <input name="FechaInicio" type="date" class="form-control" value="@tarea.FechaInicio?.ToString("yyyy-MM-dd")" />
+                                            </div>
+                                            <div class="col-md-2">
+                                                <label>Fin</label>
+                                                <input name="FechaFin" type="date" class="form-control" value="@tarea.FechaFin?.ToString("yyyy-MM-dd")" />
+                                            </div>
+                                            <div class="col-md-2">
+                                                <label>Estado</label>
+                                                <select name="Estado" class="form-select">
+                                                    @foreach (var estado in new[] { "Pendiente", "En Proceso", "Finalizado" })
+                                                    {
+                                                        <option value="@estado" selected="@(estado == tarea.Estado ? "selected" : null)">@estado</option>
+                                                    }
+                                                </select>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <label>Prioridad</label>
+                                                <select name="Prioridad" class="form-select">
+                                                    @foreach (var prioridad in new[] { "Bajo", "Medio", "Alto" })
+                                                    {
+                                                        <option value="@prioridad" selected="@(prioridad == tarea.Prioridad ? "selected" : null)">@prioridad</option>
+                                                    }
+                                                </select>
+                                            </div>
+                                            <div class="col-md-1 text-end">
+                                                <button type="submit" class="btn btn-success btn-sm me-1">💾</button>
+                                                <button type="button" class="btn btn-danger btn-sm" onclick="confirmarEliminarTarea(this, '@tarea.Titulo', @tarea.IdTarea)">🗑️</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            }
+
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <!-- Modal Confirmación Eliminar Proyecto -->
+        <div class="modal fade" id="confirmModalProyecto" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header bg-danger text-white">
+                        <h5 class="modal-title">Confirmar eliminación</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        ¿Deseás eliminar el proyecto <strong id="nombreProyectoEliminar"></strong>?
+                    </div>
+                    <div class="modal-footer">
+                        <form id="formEliminarProyecto" method="post" asp-controller="ProyectoEditor" asp-action="EliminarProyecto">
+                            <input type="hidden" name="id" id="idProyectoEliminar" />
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn btn-danger">Eliminar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    }
+</div>
+
+@section Scripts {
+    <script>
+        // Toggle para expandir o colapsar todos los proyectos
+        function toggleAll() {
+            const panels = document.querySelectorAll('.accordion-collapse');
+            const todosAbiertos = Array.from(panels).every(p => p.classList.contains('show'));
+
+            panels.forEach(p => {
+                const collapse = bootstrap.Collapse.getOrCreateInstance(p);
+                if (todosAbiertos) {
+                    collapse.hide();
+                } else {
+                    collapse.show();
+                }
+            });
+        }
+
+
+
+        // Activar edición de nombre y descripción de proyecto
+        function activarEdicion(id) {
+            const header = document.getElementById(`heading${id}`);
+            const nombreSpan = header.querySelector('button span');
+            const nombreInput = header.querySelector('.nombre-input');
+            const descripcionInput = header.querySelector('.descripcion-input');
+            const btnGuardar = document.getElementById(`btnGuardar${id}`);
+            const btnCancelar = document.getElementById(`btnCancelar${id}`);
+
+            // Ocultar texto estático y mostrar inputs para edición
+            nombreSpan.style.display = 'none';
+            nombreInput.classList.remove('d-none');
+            descripcionInput.classList.remove('d-none');
+
+            btnGuardar.classList.remove('d-none');
+            btnCancelar.classList.remove('d-none');
+        }
+
+        // Cancelar edición y restaurar valores originales
+        function cancelarEdicion(id) {
+            const header = document.getElementById(`heading${id}`);
+            const nombreSpan = header.querySelector('button span');
+            const nombreInput = header.querySelector('.nombre-input');
+            const descripcionInput = header.querySelector('.descripcion-input');
+            const btnGuardar = document.getElementById(`btnGuardar${id}`);
+            const btnCancelar = document.getElementById(`btnCancelar${id}`);
+
+            // Mostrar texto estático y ocultar inputs
+            nombreSpan.style.display = '';
+            nombreInput.classList.add('d-none');
+            descripcionInput.classList.add('d-none');
+
+            // Resetear inputs a valores originales
+            const texto = nombreSpan.textContent.split(' - ');
+            nombreInput.value = texto[0].trim();
+            descripcionInput.value = texto[1]?.trim() || '';
+
+            btnGuardar.classList.add('d-none');
+            btnCancelar.classList.add('d-none');
+        }
+
+        // Confirmar y enviar formulario para guardar cambios en proyecto
+        function confirmarGuardar(id) {
+            if (confirm('¿Deseás guardar los cambios del proyecto?')) {
+                const header = document.getElementById(`heading${id}`);
+                const nombreInput = header.querySelector('.nombre-input');
+                const descripcionInput = header.querySelector('.descripcion-input');
+
+                // Actualizar inputs ocultos en el formulario para enviarlo
+                document.getElementById(`inputNombre${id}`).value = nombreInput.value.trim();
+                document.getElementById(`inputDescripcion${id}`).value = descripcionInput.value.trim();
+
+                // Enviar formulario
+                document.getElementById(`formProyecto${id}`).submit();
+            }
+        }
+
+        // Confirmación para guardar tarea (en formulario individual de tarea)
+        function confirmarGuardarTarea(form, titulo) {
+            return confirm('Estás modificando la tarea "' + titulo + '". ¿Deseás guardar los cambios?');
+        }
+
+        // Confirmación y envío para eliminar tarea
+        function confirmarEliminarTarea(btn, titulo, id) {
+            if (confirm('¿Deseás eliminar la tarea "' + titulo + '"?')) {
+                const form = document.createElement('form');
+                form.method = 'post';
+                form.action = '/ProyectoEditor/EliminarTarea';
+
+                const input = document.createElement('input');
+                input.type = 'hidden';
+                input.name = 'id';
+                input.value = id;
+
+                form.appendChild(input);
+                document.body.appendChild(form);
+                form.submit();
+            }
+        }
+
+        // Confirmación y apertura modal para eliminar proyecto
+        function confirmarEliminarProyecto(btn, nombre, id) {
+            document.getElementById("nombreProyectoEliminar").innerText = nombre;
+            document.getElementById("idProyectoEliminar").value = id;
+            var modal = new bootstrap.Modal(document.getElementById('confirmModalProyecto'));
+            modal.show();
+        }
+    </script>
+}

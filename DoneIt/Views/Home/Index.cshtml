@@ -1,0 +1,174 @@
+﻿<link rel="stylesheet" href="~/css/Inicio.css" />
+@{
+    ViewData["Title"] = "Inicio";
+}
+
+<div class="text-center inicio-container">
+    <div class="card-inicio">
+        <h1 class="display-4">
+            <i class="fas fa-check-circle icon-animated"></i>
+            Bienvenidos a <span class="typing-container">DoneIt!</span>
+        </h1>
+        <p class="lead">
+            Organizá tus tareas y gestioná tu productividad fácilmente.
+        </p>
+
+        <div class="extra-icons">
+            <i class="fas fa-calendar-alt" title="Calendario"></i>
+            <i class="fas fa-user-circle" title="Perfil de usuario"></i>
+        </div>
+    </div>
+</div>
+
+
+<div class="proyecto">
+    <button id="btnCrearProyecto" class="btn-animado">Crear Proyecto</button>
+
+    <!-- Formulario Proyecto -->
+    <form id="formProyecto" class="form-proyecto" style="display: none;">
+        <input type="text" class="form-control" id="nombreProyecto" name="nombreProyecto" placeholder="Nombre del proyecto" required />
+        <textarea class="form-control" id="descripcionProyecto" name="descripcionProyecto" placeholder="Descripción del proyecto"></textarea>
+        <button type="button" id="btnAgregarTarea" class="btn-animado">Agregar Tarea</button>
+
+        <!-- Área de tareas agregadas -->
+        <div id="listaTareas" class="mt-3"></div>
+
+        <button type="submit" class="btn-animado mt-3">Guardar Proyecto</button>
+        <button type="button" id="btnCancelarProyecto" class="btn-animado mt-3" style="background-color: #dc3545;">Cancelar Proyecto</button>
+        <div id="mensajeProyecto" class="mensaje"></div>
+    </form>
+
+    <!-- Formulario Tarea -->
+    <div id="formTarea" class="form-tarea" style="display: none;">
+        <input type="text" class="form-control" id="tituloTarea" placeholder="Título de la tarea" />
+        <textarea class="form-control" id="descripcionTarea" placeholder="Descripción"></textarea>
+        <input type="datetime-local" class="form-control" id="fechaInicio" />
+        <input type="datetime-local" class="form-control" id="fechaFin" />
+        <select class="form-control" id="estado">
+            <option value="Pendiente">Pendiente</option>
+            <option value="En Proceso">En Proceso</option>
+            <option value="Finalizado">Finalizado</option>
+        </select>
+        <select class="form-control" id="prioridad">
+            <option value="Bajo">Bajo</option>
+            <option value="Medio">Medio</option>
+            <option value="Alto">Alto</option>
+        </select>
+        <button type="button" id="btnGuardarTarea" class="btn-animado">Guardar Tarea</button>
+        <button type="button" id="btnCancelarTarea" class="btn-animado" style="background-color: #dc3545;">Cancelar Tarea</button>
+    </div>
+</div>
+
+<script>
+    const btnCrearProyecto = document.getElementById("btnCrearProyecto");
+    const formProyecto = document.getElementById("formProyecto");
+    const btnAgregarTarea = document.getElementById("btnAgregarTarea");
+    const formTarea = document.getElementById("formTarea");
+    const btnCancelarProyecto = document.getElementById("btnCancelarProyecto");
+    const btnGuardarTarea = document.getElementById("btnGuardarTarea");
+    const btnCancelarTarea = document.getElementById("btnCancelarTarea");
+    const listaTareas = document.getElementById("listaTareas");
+    const mensajeProyecto = document.getElementById("mensajeProyecto");
+
+    let tareas = [];
+
+    btnCrearProyecto.addEventListener("click", () => {
+        formProyecto.style.display = "block";
+        btnCrearProyecto.style.display = "none";
+        mensajeProyecto.textContent = "";
+    });
+
+    btnAgregarTarea.addEventListener("click", () => {
+        formTarea.style.display = "block";
+    });
+
+    btnGuardarTarea.addEventListener("click", () => {
+        const tarea = {
+        titulo: document.getElementById("tituloTarea").value,
+        descripcion: document.getElementById("descripcionTarea").value,
+        fechaInicio: document.getElementById("fechaInicio").value || null, 
+        fechaFin: document.getElementById("fechaFin").value || null,
+        estado: document.getElementById("estado").value,
+        prioridad: document.getElementById("prioridad").value
+    };
+
+
+        tareas.push(tarea);
+
+        const div = document.createElement("div");
+        div.innerHTML = `<strong>${tarea.titulo}</strong> - ${tarea.estado} (${tarea.prioridad})`;
+        listaTareas.appendChild(div);
+
+        formTarea.style.display = "none";
+        formTarea.querySelectorAll("input, textarea, select").forEach(e => e.value = "");
+    });
+
+    btnCancelarTarea.addEventListener("click", () => {
+        formTarea.style.display = "none";
+    });
+
+    btnCancelarProyecto.addEventListener("click", () => {
+        formProyecto.style.display = "none";
+        btnCrearProyecto.style.display = "block";
+        listaTareas.innerHTML = "";
+        tareas = [];
+        mensajeProyecto.textContent = "Proyecto cancelado.";
+        mensajeProyecto.style.color = "red";
+    });
+
+        formProyecto.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const proyecto = {
+            nombre: document.getElementById("nombreProyecto").value,
+            descripcion: document.getElementById("descripcionProyecto").value,
+            tareas: tareas
+        };
+
+        //temporal
+            console.log("Objeto enviado al backend:");
+    console.log(JSON.stringify(proyecto, null, 2));
+
+        try {
+            const response = await fetch("/ProyectoTarea/Crear", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(proyecto)
+            });
+
+            if (response.redirected) {
+                window.location.href = response.url;
+            } else if (response.ok) {
+                mensajeProyecto.textContent = "Proyecto guardado con éxito.";
+                mensajeProyecto.style.color = "green";
+            } else {
+                mensajeProyecto.textContent = "Error al guardar.";
+                mensajeProyecto.style.color = "red";
+            }
+        } catch (error) {
+            console.error("Error al enviar:", error);
+            mensajeProyecto.textContent = "Error de red.";
+            mensajeProyecto.style.color = "red";
+        }
+
+        formProyecto.style.display = "none";
+        btnCrearProyecto.style.display = "block";
+        listaTareas.innerHTML = "";
+        tareas = [];
+        formProyecto.reset();
+    });
+
+        if (response.ok) {
+        mensajeProyecto.textContent = "Proyecto guardado con éxito.";
+        mensajeProyecto.style.color = "green";
+        // Limpiar los formularios
+        tareas = [];
+        listaTareas.innerHTML = "";
+        formProyecto.reset();
+        formProyecto.style.display = "none";
+        btnCrearProyecto.style.display = "block";
+    }
+
+</script>

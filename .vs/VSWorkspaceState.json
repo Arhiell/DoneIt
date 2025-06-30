@@ -1,11 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\DoneItWeb",
-    "\\DoneItWeb\\DoneIt",
-    "\\DoneItWeb\\DoneIt\\Views",
-    "\\DoneItWeb\\DoneIt\\Views\\Home"
+    "\\DoneIt",
+    "\\DoneIt\\Views",
+    "\\DoneIt\\Views\\Shared"
   ],
-  "SelectedNode": "\\DoneItWeb\\DoneIt\\Views\\Home\\Proyecto.cshtml",
+  "SelectedNode": "\\DoneIt\\Views\\Shared\\Error.cshtml",
   "PreviewInSolutionExplorer": false
 }

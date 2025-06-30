@@ -1,0 +1,151 @@
+﻿/* Contenedor individual de cada proyecto */
+.accordion-item {
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid #cbd5e1;
+    box-shadow: 0 6px 18px rgba(99, 132, 255, 0.15);
+    transition: box-shadow 0.3s ease;
+}
+
+    .accordion-item:hover {
+        box-shadow: 0 10px 28px rgba(99, 132, 255, 0.25);
+    }
+
+/* Header del proyecto */
+.accordion-header {
+    background: #dbeafe; /* celeste claro */
+    border-bottom: 1px solid #93c5fd; /* borde celeste */
+    border-radius: 12px 12px 0 0;
+    padding: 0.75rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.accordion-button {
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: #1e40af; /* azul oscuro */
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+    .accordion-button:not(.collapsed) {
+        background: #bfdbfe;
+        color: #1e3a8a;
+    }
+
+/* Cuerpo del proyecto */
+.accordion-body {
+    padding: 1rem 1.5rem;
+    background: #f9fafb;
+}
+
+/* Formulario del proyecto */
+form[id^="formProyecto"] {
+    margin-bottom: 1rem;
+}
+
+    form[id^="formProyecto"] input.form-control {
+        border-radius: 8px;
+        border: 1px solid #93c5fd;
+        transition: border-color 0.3s ease;
+    }
+
+        form[id^="formProyecto"] input.form-control:focus {
+            border-color: #2563eb;
+            box-shadow: 0 0 6px #2563ebaa;
+        }
+
+    /* Botones guardar y eliminar del proyecto */
+    form[id^="formProyecto"] .btn-success {
+        background-color: #2563eb;
+        border-color: #2563eb;
+        box-shadow: 0 4px 8px rgb(37 99 235 / 0.4);
+        transition: background-color 0.3s ease;
+    }
+
+        form[id^="formProyecto"] .btn-success:hover {
+            background-color: #1e40af;
+            border-color: #1e40af;
+        }
+
+    form[id^="formProyecto"] .btn-danger {
+        background-color: #ef4444;
+        border-color: #ef4444;
+        box-shadow: 0 4px 8px rgb(239 68 68 / 0.4);
+        transition: background-color 0.3s ease;
+    }
+
+        form[id^="formProyecto"] .btn-danger:hover {
+            background-color: #b91c1c;
+            border-color: #b91c1c;
+        }
+
+/* Caja de cada tarea */
+.accordion-body > div.mb-3 {
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #d1d5db;
+    box-shadow: 0 2px 8px rgba(99, 132, 255, 0.12);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    transition: box-shadow 0.3s ease;
+}
+
+    .accordion-body > div.mb-3:hover {
+        box-shadow: 0 6px 20px rgba(99, 132, 255, 0.25);
+    }
+
+/* Inputs y selects en tareas */
+.accordion-body input.form-control,
+.accordion-body select.form-select {
+    border-radius: 6px;
+    border: 1px solid #93c5fd;
+    transition: border-color 0.3s ease;
+}
+
+    .accordion-body input.form-control:focus,
+    .accordion-body select.form-select:focus {
+        border-color: #2563eb;
+        box-shadow: 0 0 6px #2563ebaa;
+    }
+
+/* Botones tareas */
+.accordion-body .btn-success {
+    background-color: #2563eb;
+    border-color: #2563eb;
+    box-shadow: 0 4px 8px rgb(37 99 235 / 0.4);
+    transition: background-color 0.3s ease;
+    font-size: 0.9rem;
+    padding: 4px 8px;
+}
+
+    .accordion-body .btn-success:hover {
+        background-color: #1e40af;
+        border-color: #1e40af;
+    }
+
+.accordion-body .btn-danger {
+    background-color: #ef4444;
+    border-color: #ef4444;
+    box-shadow: 0 4px 8px rgb(239 68 68 / 0.4);
+    transition: background-color 0.3s ease;
+    font-size: 0.9rem;
+    padding: 4px 8px;
+}
+
+    .accordion-body .btn-danger:hover {
+        background-color: #b91c1c;
+        border-color: #b91c1c;
+    }
+
+/* Separador título tareas */
+.accordion-body > h5 {
+    border-bottom: 2px solid #93c5fd;
+    padding-bottom: 0.3rem;
+    margin-bottom: 1rem;
+    color: #1e3a8a;
+    font-weight: 700;
+}

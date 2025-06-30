@@ -1,0 +1,97 @@
+﻿/* Estilo general */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f7fafd;
+    margin: 0;
+    padding: 0;
+}
+
+.qr-container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #e0f7fa;
+    border: 2px solid #00acc1;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+/* Títulos */
+.qr-container h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #b2ebf2;
+    border: 1px solid #00acc1;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Formulario */
+.qr-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.qr-form input[type="text"] {
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #00acc1;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: border-color 0.3s ease;
+}
+
+.qr-form input[type="text"]:focus {
+    border-color: #007c91;
+    outline: none;
+}
+
+.qr-form button {
+    padding: 10px;
+    font-size: 1rem;
+    background-color: #00acc1;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.qr-form button:hover {
+    background-color: #007c91;
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* Imagen QR */
+.qr-image-wrapper img {
+    width: 250px;
+    height: 250px;
+    border: 3px solid #00acc1;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    margin-bottom: 20px;
+}
+
+/* Botón volver */
+.btn-volver {
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: white;
+    background-color: #00acc1;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.btn-volver:hover {
+    background-color: #007c91;
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}

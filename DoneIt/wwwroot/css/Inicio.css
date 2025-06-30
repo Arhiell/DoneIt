@@ -1,0 +1,204 @@
+﻿.display-4 {
+    font-size: 2.8rem;
+    color: #0d6efd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 2rem;
+    animation: fadeInDown 1.5s ease-out;
+    font-family: 'Segoe UI Semibold', 'Verdana', sans-serif;
+}
+
+.icon-animated {
+    color: #198754;
+    font-size: 2.8rem;
+    animation: pulse 2.5s infinite;
+}
+
+/* Iconos adicionales */
+.extra-icons {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    animation: fadeInDown 2.5s ease-out;
+}
+
+.extra-icons i {
+    font-size: 2.5rem;
+    color: #0d6efd;
+    animation: bounce 2s infinite;
+}
+
+/* Marco contenedor del título */
+.card-inicio {
+    background-color: #f5faff;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 0 20px rgba(0, 123, 255, 0.2), 0 4px 6px rgba(108, 117, 125, 0.3);
+    width: 80%;
+    margin: 0 auto;
+    max-width: 800px;
+    border: 2px solid #d0e7ff;
+}
+
+/* Máquina de escribir */
+.typing-container {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid #0d6efd;
+    animation: typing 4s steps(10, end), blink 0.75s step-end infinite;
+    font-weight: bold;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 10ch;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.lead {
+    font-size: 1.2rem;
+    color: #333;
+    animation: fadeInDown 2s ease-out;
+    font-family: 'Segoe UI', sans-serif;
+    margin-top: 1rem;
+}
+
+
+/* Contenedor del bloque de creación de proyectos y tareas */
+.proyecto {
+    background-color: #f0faff;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 0 18px rgba(0, 123, 255, 0.15);
+    max-width: 850px;
+    margin: 2rem auto;
+    border: 2px solid #cce5ff;
+    animation: fadeInDown 1.2s ease-out;
+}
+
+/* Botones */
+.btn-animado {
+    background-color: #0d6efd;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.3rem;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+    font-weight: 600;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+    .btn-animado:hover {
+        background-color: #025ce2;
+        transform: scale(1.05);
+    }
+
+/* Formulario de proyecto */
+.form-proyecto {
+    margin-top: 1.5rem;
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid #dee2e6;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Formulario de tarea */
+.form-tarea {
+    margin-top: 1.5rem;
+    background-color: #e6f0ff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid #b8daff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Campos */
+.form-control {
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    border: 1px solid #ced4da;
+    font-size: 1rem;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+textarea.form-control {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* Lista de tareas agregadas */
+#listaTareas div {
+    background-color: #e2f0ff;
+    padding: 0.7rem;
+    margin-bottom: 0.5rem;
+    border-radius: 8px;
+    border: 1px solid #bcdffb;
+    font-weight: 500;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Mensajes */
+.mensaje {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+    .mensaje.success {
+        color: #28a745;
+    }
+
+    .mensaje.error {
+        color: #dc3545;
+    }
