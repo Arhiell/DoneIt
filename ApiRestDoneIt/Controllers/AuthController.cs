@@ -7,98 +7,130 @@ using System.Text;
 using ApiRestDoneIt.Data;
 using ApiRestDoneIt.DTOs;
 using ApiRestDoneIt.Models;
+using ApiRestDoneIt.Services;
+
+
 
 namespace ApiRestDoneIt.Controllers
 {
-    [ApiController]
     [Route("api/[controller]")]
+    [ApiController]
     public class AuthController : ControllerBase
     {
         private readonly DoneItContext _context;
         private readonly IConfiguration _config;
-
-        public AuthController(DoneItContext context, IConfiguration config)
+        private readonly EmailService _emailService;
+        public AuthController(DoneItContext context, IConfiguration config, EmailService emailService)
         {
             _context = context;
             _config = config;
+            _emailService = emailService;
         }
-
-        // POST: api/auth/register
-        [HttpPost("register")]
-        public async Task<IActionResult> Register([FromBody] RegisterRequestDto dto)
+        // post api/auth/login
+        [HttpPost("login")]
+        public async Task<IActionResult> Login([FromBody] LoginRequestDTO dto)
         {
-            // Validar que no exista el email o nombre de usuario
-            if (await _context.Usuarios.AnyAsync(u => u.email == dto.Email || u.nombre_usuario == dto.NombreUsuario))
-                return BadRequest(new { mensaje = "Email o nombre de usuario ya en uso." });
+            var usuario = await _context.Usuarios.FirstOrDefaultAsync(u => u.nombre_usuario == dto.Usuario);
 
-            // Generar hash y salt
-            CrearHashContrasena(dto.Contrasena, out byte[] hash, out byte[] salt);
+            if (usuario == null || !PasswordHelper.VerifyPassword(dto.Contrasena, usuario.salt, usuario.password_hash))
+                return Unauthorized(new { mensaje = "Usuario o contraseña incorrectos" });
 
-            // Mapear a la entidad
-            var usuario = new Usuario
+            var token = GenerarToken(usuario);
+
+            return Ok(new { token });
+        }
+        //post api/auth/register
+        [HttpPost("register")]
+        public async Task<IActionResult> Registro([FromBody] RegisterRequestDTO dto)
+        {
+            if (await _context.Usuarios.AnyAsync(u => u.nombre_usuario == dto.NombreUsuario))
+                return Conflict(new { mensaje = "El nombre de usuario ya existe" });
+
+            var salt = PasswordHelper.GenerateSalt();
+            var hash = PasswordHelper.HashPassword(dto.Contrasena, salt);
+
+            var nuevoUsuario = new Usuario
             {
                 nombre = dto.Nombre,
                 apellido = dto.Apellido,
                 email = dto.Email,
-                fecha_nacimiento = dto.FechaNacimiento,
                 nombre_usuario = dto.NombreUsuario,
-                password_hash = Convert.ToBase64String(hash),
-                salt = Convert.ToBase64String(salt),
+                password_hash = hash,
+                salt = salt,
                 fecha_registro = DateTime.UtcNow
             };
 
-            _context.Usuarios.Add(usuario);
+            _context.Usuarios.Add(nuevoUsuario);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction(null, new { id = usuario.id_usuario }, new { usuario.id_usuario, usuario.nombre_usuario });
+            return Ok(new { mensaje = "Usuario registrado con éxito" });
         }
-
-        // POST: api/auth/login
-        [HttpPost("login")]
-        public async Task<IActionResult> Login([FromBody] LoginRequestDto dto)
+        // Metodo para crear el JWT 
+        private string GenerarToken(Usuario usuario) 
         {
-            var user = await _context.Usuarios.FirstOrDefaultAsync(u => u.nombre_usuario == dto.Usuario);
-            if (user == null)
-                return Unauthorized(new { mensaje = "Credenciales inválidas" });
-
-            // Convertir de Base64 a byte[]
-            var storedHash = Convert.FromBase64String(user.password_hash);
-            var storedSalt = Convert.FromBase64String(user.salt);
-
-            if (!VerificarContrasena(dto.Contrasena, storedHash, storedSalt))
-                return Unauthorized(new { mensaje = "Credenciales inválidas" });
-
-            // Crear claims y token
-            var claims = new[]
-            {
-                new Claim(ClaimTypes.NameIdentifier, user.id_usuario.ToString()),
-                new Claim(ClaimTypes.Name, user.nombre_usuario)
-            };
-
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+
+            var claims = new[]
+            {
+            new Claim(ClaimTypes.NameIdentifier, usuario.id_usuario.ToString()),
+            new Claim(ClaimTypes.Name, usuario.nombre_usuario)
+        };
+
             var token = new JwtSecurityToken(
                 claims: claims,
                 expires: DateTime.UtcNow.AddHours(2),
-                signingCredentials: creds);
+                signingCredentials: creds
+            );
 
-            return Ok(new { token = new JwtSecurityTokenHandler().WriteToken(token) });
+            return new JwtSecurityTokenHandler().WriteToken(token);
         }
 
-        // === Métodos privados para hash/salt ===
 
-        private void CrearHashContrasena(string contrasena, out byte[] hash, out byte[] salt)
+        // recuperar contraseña por email
+        // post api/auth/recuperarCon
+        [HttpPost("recuperarCon")]
+        public async Task<IActionResult> RecuperarContrasena([FromBody] RecuperarConRequestDTO request)
         {
-            using var hmac = new System.Security.Cryptography.HMACSHA512();
-            salt = hmac.Key;
-            hash = hmac.ComputeHash(Encoding.UTF8.GetBytes(contrasena));
+            var usuario = await _context.Usuarios.FirstOrDefaultAsync(u => u.email == request.Email);
+
+            if (usuario != null)
+            {
+                usuario.token_recuperacion = Guid.NewGuid().ToString();
+                usuario.vencimiento_token = DateTime.UtcNow.AddHours(1);
+                await _context.SaveChangesAsync();
+
+                await _emailService.EnviarCorreoRecuperacion(usuario.email, usuario.token_recuperacion);
+            }
+
+            // Siempre devolver lo mismo para evitar que se use para verificar correos existentes
+            return Ok("Si el correo está registrado, se envió un mail de recuperación.");
+        }
+        // restablecer contraseña con token
+        // post api/auth/restablecer
+        [HttpPost("restablecer")]
+        public async Task<IActionResult> RestablecerContrasena([FromBody] ResetConRequestDTO request)
+        {
+            var usuario = await _context.Usuarios.FirstOrDefaultAsync(u =>
+                u.token_recuperacion == request.Token &&
+                u.vencimiento_token > DateTime.UtcNow); // Verifica que el token no haya expirado
+
+            if (usuario == null) return BadRequest("Token inválido o vencido");
+
+            // Hashear y guardar nueva contraseña
+            var salt = PasswordHelper.GenerateSalt(); 
+            usuario.salt = salt;
+            usuario.password_hash = PasswordHelper.HashPassword(request.NuevaContrasena, salt);
+
+            // Limpiar token
+            usuario.token_recuperacion = null;
+            usuario.vencimiento_token = null;
+
+            await _context.SaveChangesAsync();
+            return Ok("Contraseña actualizada");
         }
 
-        private bool VerificarContrasena(string contrasenaIngresada, byte[] hashGuardado, byte[] salt)
-        {
-            using var hmac = new System.Security.Cryptography.HMACSHA512(salt);
-            var hashCalculado = hmac.ComputeHash(Encoding.UTF8.GetBytes(contrasenaIngresada));
-            return hashCalculado.SequenceEqual(hashGuardado);
-        }
+
+
     }
 }

@@ -10,27 +10,27 @@ public class ProyectosController : ControllerBase
 	private readonly DoneItContext _context;
 
 	public ProyectosController(DoneItContext context) => _context = context;
-
-	[HttpGet]
+    // obtener todos los proyectos con el usuario asociado
+    [HttpGet]
 	public async Task<ActionResult<IEnumerable<Proyecto>>> GetProyectos()
 		=> await _context.Proyectos.Include(p => p.id_usuarioNavigation).ToListAsync();
-
-	[HttpGet("{id}")]
+    // obtener un proyecto por id con el usuario asociado
+    [HttpGet("{id}")]
 	public async Task<ActionResult<Proyecto>> GetProyecto(int id)
 	{
         var proyecto = await _context.Proyectos.FirstOrDefaultAsync(p => p.id_proyecto == id);
         return proyecto == null ? NotFound() : proyecto;
 	}
-
-	[HttpPost]
+    // crear un nuevo proyecto
+    [HttpPost]
 	public async Task<ActionResult<Proyecto>> PostProyecto(Proyecto proyecto)
 	{
 		_context.Proyectos.Add(proyecto);
 		await _context.SaveChangesAsync();
 		return CreatedAtAction(nameof(GetProyecto), new { id = proyecto.id_proyecto }, proyecto);
 	}
-
-	[HttpPut("{id}")]
+    // actualizar un proyecto existente
+    [HttpPut("{id}")]
 	public async Task<IActionResult> PutProyecto(int id, Proyecto proyecto)
 	{
 		if (id != proyecto.id_proyecto) return BadRequest();
@@ -38,8 +38,8 @@ public class ProyectosController : ControllerBase
 		await _context.SaveChangesAsync();
 		return NoContent();
 	}
-
-	[HttpDelete("{id}")]
+    // actualizar datos de proyecto
+    [HttpDelete("{id}")]
 	public async Task<IActionResult> DeleteProyecto(int id)
 	{
 		var proyecto = await _context.Proyectos.FindAsync(id);

@@ -1,6 +1,6 @@
 ﻿namespace ApiRestDoneIt.DTOs
 {
-    public class RegisterRequestDto
+    public class RegisterRequestDTO
     {
         public string? Nombre { get; set; }
         public string? Apellido { get; set; }
