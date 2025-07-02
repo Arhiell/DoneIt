@@ -1,0 +1,81 @@
+﻿body {
+    background: linear-gradient(to bottom right, #e0ecf4, #f8f9fa); /* degradado suave */
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 1rem;
+}
+
+.card-container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2rem 3rem;
+    border-radius: 1rem;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    max-width: 450px;
+    width: 100%;
+    text-align: center;
+}
+
+.doneit-title {
+    font-weight: 900;
+    font-size: 2.5rem;
+    background: #6fc4e8; /* celeste suave */
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 12px rgba(111, 196, 232, 0.4);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    user-select: none;
+    margin-bottom: 1.5rem;
+}
+
+form {
+    background: transparent;
+    padding: 0;
+    box-shadow: none;
+    max-width: 100%;
+    width: 100%;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #4185c2; /* azul más apagado */
+}
+
+.form-control {
+    border-radius: 0.4rem;
+    border: 1px solid #ced4da;
+}
+
+.btn-primary {
+    background-color: #4185c2;
+    border-color: #4185c2;
+    box-shadow: 0 4px 10px rgba(65, 133, 194, 0.3);
+    width: 100%;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background-color: #366fa4;
+    border-color: #366fa4;
+}
+
+.register-link {
+    color: #6c757d;
+    font-weight: 600;
+    margin-top: 1rem;
+    display: block;
+    text-align: center;
+}
+
+.register-link:hover {
+    color: #4185c2;
+    text-decoration: underline;
+}

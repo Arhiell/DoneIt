@@ -1,0 +1,80 @@
+﻿.qr-header-container {
+    margin: 40px auto;
+    padding: 30px;
+    max-width: 700px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.qr-title {
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: #2c3e50;
+    animation: fadeInDown 1s ease-out;
+}
+
+.qr-subtitle {
+    font-size: 1.4rem;
+    color: #555;
+    margin-top: 10px;
+    animation: fadeInUp 1s ease-out;
+}
+
+.icon-spin {
+    display: inline-block;
+    animation: spin 3s linear infinite;
+}
+
+.qr-button-container {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.qr-button {
+    font-size: 1.2rem;
+    padding: 12px 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+    transition: all 0.3s ease-in-out;
+}
+
+    .qr-button:hover {
+        box-shadow: 0 8px 20px rgba(0, 123, 255, 0.5);
+        transform: translateY(-2px);
+    }
+
+/* Animaciones */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

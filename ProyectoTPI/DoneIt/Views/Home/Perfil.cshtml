@@ -1,0 +1,128 @@
+﻿@inject IHttpContextAccessor HttpContextAccessor
+@section Styles {
+
+<link rel="stylesheet" href="~/css/Perfil.css" />
+}
+@{
+    ViewData["Title"] = "Perfil de Usuario";
+    var session = HttpContextAccessor.HttpContext?.Session;
+    var usuario = session?.GetString("UsuarioLogueado") ?? "Sin sesión";
+    var nombreCompleto = session?.GetString("NombreCompleto") ?? "Usuario Anónimo";
+    var nacimiento = session?.GetString("FechaNacimiento") ?? "No disponible";
+    var email = session?.GetString("Email") ?? "No disponible";
+    var fechaRegistro = session?.GetString("FechaRegistro") ?? "No disponible";
+
+}
+<div class="perfil-card">
+    <div class="perfil-title">
+        <i class="fas fa-user-circle"></i>
+        Perfil del Usuario
+    </div>
+    <p class="perfil-subtitulo">
+        En esta sección podés consultar y modificar tus datos personales y credenciales de acceso.
+    </p>
+</div>
+
+
+<div class="perfil-card">
+    <div class="perfil-title">
+        <i class="fas fa-user-circle"></i>
+        Perfil del Usuario
+    </div>
+
+    <hr class="perfil-hr" />
+
+    <div class="perfil-item">
+        <i class="fas fa-user"></i>
+        <strong>Usuario:</strong> @usuario
+    </div>
+
+    <div class="perfil-item">
+        <i class="fas fa-id-card"></i>
+        <strong>Nombre Completo:</strong> @nombreCompleto
+    </div>
+
+    <div class="perfil-item">
+        <i class="fas fa-calendar-alt"></i>
+        <strong>Fecha de Nacimiento:</strong> @nacimiento
+    </div>
+
+    <div class="perfil-item">
+        <i class="fas fa-envelope"></i>
+        <strong>Email:</strong> @email
+    </div>
+
+    <div class="perfil-item">
+        <i class="fas fa-calendar-check"></i>
+        <strong>Fecha de Registro:</strong> @fechaRegistro
+    </div>
+
+
+
+    <!--Editar datos del Usuario-->
+    <!-- Botón para mostrar formulario -->
+    <button id="btnEditar" class="btn btn-primary mt-3">Editar datos</button>
+
+    <!-- Formulario oculto para editar -->
+ 
+    <form id="formEditar" method="post" asp-controller="Usuario" asp-action="ActualizarPerfil" style="display:none; margin-top:20px;">
+        <div class="mb-3">
+            <label for="NombreUsuario" class="form-label">Nuevo nombre de usuario</label>
+            <input type="text" class="form-control" id="NombreUsuario" name="NombreUsuario" placeholder="@usuario">
+            <small class="form-text text-muted">Dejar en blanco para no modificar</small>
+        </div>
+
+        <div class="mb-3">
+            <label for="Email" class="form-label">Nuevo email</label>
+            <input type="email" class="form-control" id="Email" name="Email" placeholder="@email">
+            <small class="form-text text-muted">Dejar en blanco para no modificar</small>
+        </div>
+
+        <hr />
+
+        <div class="mb-3">
+            <label for="PasswordAntigua" class="form-label">Contraseña actual</label>
+            <input type="password" class="form-control" id="PasswordAntigua" name="PasswordAntigua" placeholder="Contraseña actual">
+            <small class="form-text text-muted">Requerida solo si cambiarás la contraseña</small>
+        </div>
+
+        <div class="mb-3">
+            <label for="PasswordNueva" class="form-label">Nueva contraseña</label>
+            <input type="password" class="form-control" id="PasswordNueva" name="PasswordNueva" placeholder="Nueva contraseña">
+            <small class="form-text text-muted">Dejar en blanco para no modificar</small>
+        </div>
+
+        <button type="submit" class="btn btn-success">Guardar</button>
+        <button type="button" id="btnCancelar" class="btn btn-secondary ms-2">Cancelar</button>
+    </form>
+</div>
+
+
+    <script>
+        document.getElementById('btnEditar').addEventListener('click', function () {
+            document.getElementById('formEditar').style.display = 'block';
+            this.style.display = 'none';
+        });
+
+        document.getElementById('btnCancelar').addEventListener('click', function () {
+            document.getElementById('formEditar').style.display = 'none';
+            document.getElementById('btnEditar').style.display = 'inline-block';
+            // Limpio inputs
+            document.getElementById('formEditar').reset();
+            alert('Edición cancelada');
+        });
+
+        document.getElementById('formEditar').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Opcional: validar aquí si password antigua y nueva están bien (o backend lo hará)
+
+            // Envía el formulario con fetch (AJAX) o submit normal:
+            // Por simplicidad, submit normal y muestra alerta en success.
+
+            // Aquí para demo mostramos alerta, luego submits normalmente:
+            alert('Cambios guardados (simulación)');
+
+            this.submit();
+        });
+    </script>

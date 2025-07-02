@@ -1,0 +1,30 @@
+# Archivos de Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build
+bin/
+obj/
+[Bb]uild/
+[Bb]in/
+[Oo]bj/
+
+# Logs
+*.log
+
+# Archivos temporales
+*.tmp
+*.bak
+*.dbmdl
+
+# Otros
+*.pdb
+*.cache
+*.dll
+*.exe
+*.csproj.user
+*.ide
+*.db
