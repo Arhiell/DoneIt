@@ -1,57 +1,68 @@
----
-#      ✨ **DoneIt!**
+# 🚀 **DoneIt!** ❗
 
-  DoneIt! es una aplicación web y móvil que permite a los usuarios gestionar sus tareas de manera simple y organizada. Ofrece funcionalidades básicas de un To Do List como crear, editar, eliminar y marcar tareas como completadas.
+> 📌 *Gestor de tareas individuales y colaborativas orientado a la organización completa de proyectos.*
 
-
-
+Una solución digital pensada para **crear, organizar, editar y compartir proyectos con múltiples tareas**, ideal para estudiantes, equipos de trabajo y uso personal. Incluye funcionalidades como manejo de estados, prioridades, fechas y generación de códigos QR para acceso rápido.
 
 ---
-## 🎯 Objetivo del Proyecto
-El objetivo de DoneIt! es desarrollar una solución completa compuesta por tres aplicaciones complementarias: una aplicación web en ASP.NET MVC, una API RESTful y una SPA web/móvil. El proyecto fue planteado en la cátedra de Programación III con el fin de aplicar tecnologías modernas de desarrollo web, autenticación segura y buenas prácticas de arquitectura.
+# 📱 [DoneIt! - Versión Móvil]([https://github.com/tu-usuario/DoneIt-Mobile](https://github.com/Arhiell/DoneItMobil.git))
 
-- **Incluye**:
-    - Aplicación Web basada en MVC con Razor Pages.
-    - API RESTful protegida con JWT.
-    - SPA para navegador y móvil.
-    - App móvil Android con Kotlin y arquitectura MVVM. 
-    - Base de datos MySQL administrada con Workbench.
+
+🔗 **Esta el enlace en el título** te redirige al repositorio de la versión móvil de DoneIt!.
+---
+
+## 🎯 Objetivo General
+
+Desarrollar una aplicación completa con foco en **Desarrollo Web** y **Desarrollo Móvil**, integrando:
+
+* Conocimientos adquiridos en ambas asignaturas.
+* Patrones de arquitectura modernos (MVC, MVVM).
+* Seguridad, escalabilidad y experiencia de usuario.
+
+El objetivo es construir una herramienta realista y funcional que sirva como modelo de proyecto completo para el mundo profesional.
 
 ---
-## 🛠️  Herramientas y Tecnologías Usadas 🧰
 
-- **🌐 Frontend:**
-    - 🧱 **HTML5**
-    - 🎨 **CSS3**
-    - ⚛️ **JavaScript (SPA)**
-    -  **🧩 Bootstrap / Tailwind CSS**
-    - **🧪 JavaScript**
-    - **🌍 Axios o Fetch API**
-- **🖥️ Backend Web:**
-    - **🧱 ASP.NET MVC con Razor Pages**
-    - **🔐 ASP.NET Web API**
-    - **🛡️ JWT (JSON Web Token)**
-    - **🧂🔑 Hash + Salt (Identity)**
-- **📱 Aplicación Móvil (Android):**
-    - **📱 Android Studio**
-    - **🧬 Kotlin**
-    - **🧭 Arquitectura MVVM**
-- **🛢️ Base de Datos:**
-    - 🐬 **MySQL**
-    - 🧰 **SGBD**: MySQL Workbench
-    - **📄 Scripts SQL / Migraciones**
-- **🔗 Otros:**
-    - **🧾 Git + GitHub**
-    - **✉️ SMTP / Email Service** – Para recuperación de contraseña vía enlace seguro.
-    - **📱 QR Code Generator** – Generación de QR desde el backend para funcionalidades exclusivas.
----
-## 🚀 **¿Cómo ejecutar el proyecto?**
+## 🛠️ Herramientas Web
 
-El desarrollo de DoneIt! está en proceso. Próximamente se incluirán instrucciones detalladas para la instalación y ejecución de cada componente.
+| Herramienta            | Uso                                  |
+| ---------------------- | ------------------------------------ |
+| ⚙ ASP.NET Core MVC     | Backend estructurado con Razor Pages |
+| 🔐 Identity + JWT      | Seguridad y autenticación            |
+| 💾 MySQL               | Base de datos relacional             |
+| 📦 EF Core + ADO.NET   | Acceso a datos ORM/directo           |
+| 🎨 Bootstrap + CSS     | Estilos responsivos                  |
+| 🖥️ Visual Studio 2022 | IDE de desarrollo                    |
+| 📲 QRCoder (NuGet)     | Generación de códigos QR             |
+| 🧠 JavaScript          | Dinámica en el frontend              |
 
 ---
-## 📄 Documentación y Uso.
-Este proyecto incluye documentación básica que describe el escenario elegido y cómo se cumplen los requisitos. Pronto se agregarán guías para facilitar la navegación y el uso.
+
+## 📱 Herramientas Mobile
+
+| Herramienta             | Uso                         |
+| ----------------------- | --------------------------- |
+| 🧩 Kotlin               | Lenguaje principal          |
+| 📱 Android Studio       | IDE principal para mobile   |
+| 🔄 Retrofit             | Consumo de APIs REST        |
+| 📲 RecyclerView         | Listado de datos            |
+| 🧠 ViewModel + LiveData | Arquitectura MVVM           |
+| 🎨 XML Layouts          | Diseño visual de interfaces |
+
+---
+
+## 🧪 Modos de Uso
+
+1. 🔨 Crear proyecto con un **nombre** y **descripción** editable.
+2. 🧷 Agregar **una o varias tareas** al proyecto.
+3. 📝 Cada tarea permite definir:
+
+   * Nombre y descripción (editables).
+   * Fecha de inicio y fin (modificables).
+   * Estado: "En proceso", "Terminada", etc.
+   * Prioridad: Alta, Media o Baja.
+4. ❌ Se pueden eliminar proyectos y tareas.
+5. 📷 Generar código QR para acceder a contenido (enlace, frase, etc.).
 
 ---
 ## 👥 Autores
