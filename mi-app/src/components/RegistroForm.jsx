@@ -29,7 +29,7 @@ const RegistroForm = () => {
     setExito(null);
 
     try {
-      const res = await fetch("https://tudominio.com/api/auth/registro", {
+      const res = await fetch("http://localhost:5119/api/auth/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -45,7 +45,7 @@ const RegistroForm = () => {
         nombre: "",
         apellido: "",
         email: "",
-        fechaNacimiento: "",
+        fechaNacimiento: "", // Formato YYYY-MM-DD
         nombreUsuario: "",
         contrasena: "",
       });
@@ -54,6 +54,7 @@ const RegistroForm = () => {
     } finally {
       setCargando(false);
     }
+    console.log("Enviando datos:", formData);
   };
 
   return (
