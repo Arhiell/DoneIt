@@ -4,6 +4,7 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
 using ApiRestDoneIt.Data;
+using ApiRestDoneIt.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,7 +14,7 @@ var key = builder.Configuration["Jwt:Key"];
 // Servicios
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
-
+    
 // Swagger + JWT support en Swagger UI
 builder.Services.AddSwaggerGen(c =>
 {
@@ -59,7 +60,7 @@ builder.Services.AddAuthentication(options =>
 })
 .AddJwtBearer(options =>
 {
-    options.RequireHttpsMetadata = false; // En producción poné true
+    options.RequireHttpsMetadata = false; // En producción poner true
     options.SaveToken = true;
     options.TokenValidationParameters = new TokenValidationParameters
     {
@@ -82,8 +83,17 @@ builder.Services.AddCors(options =>
               .AllowAnyHeader();
     });
 });
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.Preserve;
+        options.JsonSerializerOptions.WriteIndented = true;
+    });
 
-var app = builder.Build();
+// Inyectar EmailService
+builder.Services.AddScoped<EmailService>();
+
+var app = builder.Build();// Construir la aplicación
 
 // Middleware
 if (app.Environment.IsDevelopment())

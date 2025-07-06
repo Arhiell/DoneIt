@@ -40,10 +40,20 @@ public partial class DoneItContext : DbContext
 
             entity.HasIndex(e => e.id_usuario, "id_usuario");
 
-            entity.Property(e => e.descripcion).HasColumnType("text");
+            entity.Property(e => e.id_proyecto).HasColumnName("id_proyecto");
+            
+            entity.Property(e => e.descripcion)
+                .HasColumnType("text")
+                .HasColumnName("descripcion");
+
+            entity.Property(e => e.fecha_creacion)
+                .HasColumnType("date")
+                .HasColumnName("fecha_creacion");
+
             entity.Property(e => e.nombre)
                 .IsRequired()
-                .HasMaxLength(100);
+                .HasMaxLength(100)
+                .HasColumnName("nombre");
 
             entity.HasOne(d => d.id_usuarioNavigation).WithMany(p => p.proyectos)
                 .HasForeignKey(d => d.id_usuario)
@@ -58,8 +68,11 @@ public partial class DoneItContext : DbContext
             entity.ToTable("tarea");
 
             entity.HasIndex(e => e.id_proyecto, "id_proyecto");
+            
+            entity.Property(e => e.id_tarea).HasColumnName("id_tarea");
 
-            entity.Property(e => e.descripcion).HasColumnType("text");
+            entity.Property(e => e.descripcion).HasColumnType("text")
+            .HasColumnName("descripcion");
             entity.Property(e => e.estado)
                 .IsRequired()
                 .HasColumnType("enum('Pendiente','En Proceso','Finalizado')");
@@ -70,7 +83,9 @@ public partial class DoneItContext : DbContext
                 .HasColumnType("enum('Bajo','Medio','Alto')");
             entity.Property(e => e.titulo)
                 .IsRequired()
-                .HasMaxLength(150);
+                .HasMaxLength(150)
+                .HasColumnName("titulo");
+            entity.Property(e => e.id_proyecto).HasColumnName("id_proyecto");
 
             entity.HasOne(d => d.id_proyectoNavigation).WithMany(p => p.tareas)
                 .HasForeignKey(d => d.id_proyecto)
@@ -94,6 +109,12 @@ public partial class DoneItContext : DbContext
             entity.Property(e => e.email)
                 .IsRequired()
                 .HasMaxLength(150);
+            entity.Property(e => e.fecha_nacimiento)
+                           .HasColumnType("date")
+                           .HasColumnName("fecha_nacimiento");
+            entity.Property(e => e.fecha_registro)
+                .HasColumnType("date")
+                .HasColumnName("fecha_registro");
             entity.Property(e => e.nombre)
                 .IsRequired()
                 .HasMaxLength(50);

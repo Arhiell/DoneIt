@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ApiRestDoneIt.Models;
 using ApiRestDoneIt.Data;
+using Microsoft.AspNetCore.Authorization;
 
 [Route("api/[controller]")]
 [ApiController]
@@ -10,10 +11,26 @@ public class ProyectosController : ControllerBase
 	private readonly DoneItContext _context;
 
 	public ProyectosController(DoneItContext context) => _context = context;
-    // obtener todos los proyectos con el usuario asociado
-    [HttpGet]
-	public async Task<ActionResult<IEnumerable<Proyecto>>> GetProyectos()
-		=> await _context.Proyectos.Include(p => p.id_usuarioNavigation).ToListAsync();
+
+    // GET: api/proyecto/mis-proyectos
+    [HttpGet("mis-proyectos")]
+    [Authorize]
+    public async Task<ActionResult<IEnumerable<Proyecto>>> GetMisProyectos()
+    {
+        // Supongamos que guardaste el id en el JWT como claim
+        var idUsuarioClaim = User.FindFirst("id_usuario")?.Value;
+
+        if (idUsuarioClaim == null) return Unauthorized();
+
+        int idUsuario = int.Parse(idUsuarioClaim);
+
+        var proyectos = await _context.Proyectos
+            .Where(p => p.id_usuario == idUsuario)
+            .ToListAsync();
+
+        return Ok(proyectos);
+    }
+
     // obtener un proyecto por id con el usuario asociado
     [HttpGet("{id}")]
 	public async Task<ActionResult<Proyecto>> GetProyecto(int id)
