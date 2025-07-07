@@ -38,6 +38,7 @@ const handleSubmit = async (e) => {
 
       const data = await response.json();
       localStorage.setItem("token", data.token);
+      localStorage.setItem("nombreUsuario", data.usuario);
       window.location.href = "/dashboard";
     }, esperaExtra);
 
