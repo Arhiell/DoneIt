@@ -1,3 +1,4 @@
+Video y Documento sobre la app y sus requerimientos: https://drive.google.com/drive/folders/188sD8Ldw4hs9L-LVx7_irELyccfYyLX6?usp=sharing
 # 🚀 **DoneIt!** ❗
 
 > 📌 *Gestor de tareas individuales y colaborativas orientado a la organización completa de proyectos.*
