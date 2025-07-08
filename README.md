@@ -1,9 +1,9 @@
 Video y Documento sobre la app y sus requerimientos: https://drive.google.com/drive/folders/188sD8Ldw4hs9L-LVx7_irELyccfYyLX6?usp=sharing
 # 🚀 **DoneIt!** ❗
 
-> 📌 *Gestor de tareas individuales y colaborativas orientado a la organización completa de proyectos.*
+> 📌 *Gestor de tareas individuales orientado a la organización completa de proyectos.*
 
-Una solución digital pensada para **crear, organizar, editar y compartir proyectos con múltiples tareas**, ideal para estudiantes, equipos de trabajo y uso personal. Incluye funcionalidades como manejo de estados, prioridades, fechas y generación de códigos QR para acceso rápido.
+Una solución digital pensada para **crear, organizar, editar y compartir proyectos con múltiples tareas**, ideal para estudiantes y uso personal. Incluye funcionalidades como manejo de estados, prioridades, fechas.
 
 ---
 # 📱 [**DoneIt! - Versión Móvil**](https://github.com/Arhiell/DoneItMobil/tree/main)
