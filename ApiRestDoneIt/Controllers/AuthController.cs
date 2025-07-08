@@ -37,7 +37,7 @@ namespace ApiRestDoneIt.Controllers
 
             var token = GenerarToken(usuario);
 
-            return Ok(new { token });
+            return Ok(new { token, nombreUsuario = usuario.nombre_usuario });
         }
         //post api/auth/register
         [HttpPost("register")]
@@ -57,7 +57,8 @@ namespace ApiRestDoneIt.Controllers
                 nombre_usuario = dto.NombreUsuario,
                 password_hash = hash,
                 salt = salt,
-                fecha_registro = DateTime.UtcNow
+                fecha_registro = DateTime.UtcNow,
+                fecha_nacimiento = dto.FechaNacimiento
             };
 
             _context.Usuarios.Add(nuevoUsuario);

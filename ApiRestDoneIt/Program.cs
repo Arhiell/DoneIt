@@ -83,6 +83,7 @@ builder.Services.AddCors(options =>
               .AllowAnyHeader();
     });
 });
+// Esto sirve para serializar correctamente las referencias circulares en JSON
 builder.Services.AddControllers()
     .AddJsonOptions(options =>
     {
