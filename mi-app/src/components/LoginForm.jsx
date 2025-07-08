@@ -13,11 +13,10 @@ const handleSubmit = async (e) => {
   e.preventDefault();
   setCargando(true);
   setError(null);
-
   const inicio = Date.now();
 
   try {
-    const response = await fetch("http://localhost:5119/api/auth/login", {
+    const response = await fetch("http://localhost:5119/api/Auth/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

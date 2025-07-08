@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const RegistroForm = () => {
+const RegistroForm = ({ onSubmit }) => {
   const [formData, setFormData] = useState({
     nombre: "",
     apellido: "",
@@ -39,7 +39,7 @@ const RegistroForm = () => {
         const body = await res.json();
         throw new Error(body.error || "Error en el registro");
       }
-
+      onSubmit(); // Llama a la función onSubmit pasada como prop
       setExito("Cuenta creada correctamente. Ya puedes iniciar sesión.");
       setFormData({
         nombre: "",

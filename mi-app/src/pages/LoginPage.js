@@ -1,13 +1,19 @@
-// src/pages/LoginPage.jsx
-import React from 'react';
+import React, { useEffect } from 'react';
 import LoginForm from '../components/LoginForm';
 import { useNavigate } from 'react-router-dom';
 
 const LoginPage = () => {
   const navigate = useNavigate();
 
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      navigate("/dashboard", { replace: true }); // redirige si ya está logueado
+    }
+  }, [navigate]);
+
   const handleLoginSuccess = () => {
-    navigate('/proyectos');
+    navigate('/dashboard'); // redirige después de login exitoso
   };
 
   return (
@@ -18,4 +24,5 @@ const LoginPage = () => {
 };
 
 export default LoginPage;
-
+// Este componente maneja la página de inicio de sesión
+// y redirige al usuario a la página de dashboard si ya está logueado.
