@@ -61,7 +61,7 @@ namespace DoneIt.Controllers
             catch (Exception ex)
             {
                 Console.WriteLine("ERROR EN /ProyectoTarea/Crear:");
-                Console.WriteLine(ex.ToString());                   //try catch solo para una preuba de crear tareas
+                Console.WriteLine(ex.ToString());                   
 
                 return StatusCode(500, "Error interno: " + ex.Message);
             }
