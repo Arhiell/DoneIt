@@ -68,21 +68,50 @@ public class ProyectosController : ControllerBase
     }
     // actualizar un proyecto existente
     [HttpPut("{id}")]
-	public async Task<IActionResult> PutProyecto(int id, Proyecto proyecto)
-	{
-		if (id != proyecto.id_proyecto) return BadRequest();
-		_context.Entry(proyecto).State = EntityState.Modified;
-		await _context.SaveChangesAsync();
-		return NoContent();
-	}
+    [Authorize]
+    public async Task<IActionResult> PutProyecto(int id, Proyecto proyecto)
+    {
+        if (id != proyecto.id_proyecto)
+            return BadRequest("ID de proyecto no coincide");
+
+        var idUsuarioClaim = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+        if (!int.TryParse(idUsuarioClaim, out int idUsuario))
+            return Unauthorized("Usuario no autenticado");
+
+        var proyectoExistente = await _context.Proyectos.FindAsync(id);
+        if (proyectoExistente == null)
+            return NotFound("Proyecto no encontrado");
+
+        if (proyectoExistente.id_usuario != idUsuario)
+            return Forbid("No tienes permisos para modificar este proyecto");
+
+        // Solo actualizás los campos permitidos:
+        proyectoExistente.nombre = proyecto.nombre;
+        proyectoExistente.descripcion = proyecto.descripcion;
+
+        await _context.SaveChangesAsync();
+
+        return NoContent();
+    }
     // eliminar proyecto
     [HttpDelete("{id}")]
-	public async Task<IActionResult> DeleteProyecto(int id)
-	{
-		var proyecto = await _context.Proyectos.FindAsync(id);
-		if (proyecto == null) return NotFound();
-		_context.Proyectos.Remove(proyecto);
-		await _context.SaveChangesAsync();
-		return NoContent();
-	}
+    [Authorize]
+    public async Task<IActionResult> DeleteProyecto(int id)
+    {
+        var idUsuarioClaim = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+        if (!int.TryParse(idUsuarioClaim, out int idUsuario))
+            return Unauthorized("Usuario no autenticado");
+
+        var proyecto = await _context.Proyectos.FindAsync(id);
+        if (proyecto == null)
+            return NotFound("Proyecto no encontrado");
+
+        if (proyecto.id_usuario != idUsuario)
+            return Forbid("No tienes permisos para eliminar este proyecto");
+
+        _context.Proyectos.Remove(proyecto);
+        await _context.SaveChangesAsync();
+
+        return NoContent();
+    }
 }

@@ -161,6 +161,7 @@ public class TareasController : ControllerBase
             return Forbid("No puedes modificar esta tarea.");
 
         // Actualizar campos permitidos
+        tareaExistente.titulo = tarea.titulo;
         tareaExistente.descripcion = tarea.descripcion;
         tareaExistente.fecha_inicio = tarea.fecha_inicio;
         tareaExistente.fecha_fin = tarea.fecha_fin;
