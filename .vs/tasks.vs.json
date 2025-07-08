@@ -1,0 +1,15 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskLabel": "tarea-ApiRest",
+      "appliesTo": "ApiRest/",
+      "type": "launch"
+    },
+    {
+      "taskLabel": "tarea-DoneIt",
+      "appliesTo": "/",
+      "type": "launch"
+    }
+  ]
+}
